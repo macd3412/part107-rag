@@ -1,19 +1,21 @@
+"""Parse eCFR Part 107 / Part 89 XML into retrieval chunks."""
+
 import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-RAW_DIR = Path("data/raw")
-OUT_PATH = Path("data/processed/chunks.jsonl")
-OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+from src import config
 
 CROSS_REF_RE = re.compile(r"(?:§+\s*\d+\.\d+[a-z0-9()]*|part\s+\d+)", re.IGNORECASE)
 MAX_CHARS = 1600
 
 def clean_text(elem: ET.Element) -> str:
+    """Return the element's text with runs of whitespace collapsed to spaces."""
     return re.sub(r"\s+", " ", "".join(elem.itertext())).strip()
 
 def parse_part(xml_path: Path, part_num: str) -> list[dict]:
+    """Parse one CFR part XML file into a list of chunk dicts."""
     tree = ET.parse(xml_path)
     root = tree.getroot()
     chunks: list[dict] = []
@@ -66,17 +68,18 @@ def parse_part(xml_path: Path, part_num: str) -> list[dict]:
     return chunks
 
 def main() -> None:
+    config.PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
     all_chunks = []
     for part_num, filename in [("107", "part107.xml"), ("89", "part89.xml")]:
-        path = RAW_DIR / filename
+        path = config.RAW_DIR / filename
         if path.exists():
             all_chunks.extend(parse_part(path, part_num))
 
-    with OUT_PATH.open("w", encoding="utf-8") as f:
+    with config.CHUNKS_PATH.open("w", encoding="utf-8") as f:
         for chunk in all_chunks:
             f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
 
-    print(f"Wrote {len(all_chunks)} CFR chunks to {OUT_PATH}")
+    print(f"Wrote {len(all_chunks)} CFR chunks to {config.CHUNKS_PATH}")
 
 if __name__ == "__main__":
     main()

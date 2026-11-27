@@ -1,12 +1,18 @@
+"""Offline-friendly evaluation harness.
+
+Scores retrieval recall@k, citation accuracy, and refusal guardrails against the
+labelled cases in ``config.EVAL_PATH``. Requires a live Gemini API key.
+"""
+
 import json
 import time
-from pathlib import Path
+
+from src import config
 from src.rag.pipeline import Part107RAG
 
-EVAL_PATH = Path("data/eval/part107_eval.json")
 
 def main() -> None:
-    cases = json.loads(EVAL_PATH.read_text(encoding="utf-8"))
+    cases = json.loads(config.EVAL_PATH.read_text(encoding="utf-8"))
     rag = Part107RAG()
 
     in_scope_total = 0

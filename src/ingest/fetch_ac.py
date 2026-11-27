@@ -1,8 +1,11 @@
-from pathlib import Path
+"""Download the FAA AC 107-2A advisory-circular PDF into the raw data dir."""
+
 import requests
 
-OUT_PATH = Path("data/raw/ac_107_2a.pdf")
-OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+from src import config
+
+OUT_PATH = config.RAW_DIR / "ac_107_2a.pdf"
+config.RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 URLS = [
     "https://www.faa.gov/documentLibrary/media/Advisory_Circular/Editorial_Update_AC_107-2A.pdf",

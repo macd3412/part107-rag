@@ -1,20 +1,25 @@
+"""Build the document embedding matrix from the chunked corpus.
+
+This is a one-off offline indexing step run with the `google-genai` client;
+query-time retrieval uses the REST API (see `src/rag/retriever.py`).
+"""
+
 import json
 import time
-from pathlib import Path
+
 import numpy as np
 from dotenv import load_dotenv
 from google import genai
 from google.genai import errors, types
 
+from src import config
+
 load_dotenv()
 
-CHUNKS_PATH = Path("data/processed/chunks.jsonl")
-EMB_PATH = Path("data/processed/embeddings.npy")
-EMBED_MODEL = "gemini-embedding-001"
 BATCH_SIZE = 25
 
 def main() -> None:
-    chunks = [json.loads(line) for line in CHUNKS_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
+    chunks = [json.loads(line) for line in config.CHUNKS_PATH.read_text(encoding="utf-8").splitlines() if line.strip()]
     texts = [c["text"] for c in chunks]
 
     client = genai.Client()
@@ -26,7 +31,7 @@ def main() -> None:
         print(f"Embedding chunks {i + 1}–{i + len(batch)} of {len(texts)}...")
         try:
             resp = client.models.embed_content(
-                model=EMBED_MODEL,
+                model=config.EMBED_MODEL,
                 contents=batch,
                 config=types.EmbedContentConfig(task_type="RETRIEVAL_DOCUMENT"),
             )
@@ -43,8 +48,8 @@ def main() -> None:
     norms = np.linalg.norm(matrix, axis=1, keepdims=True)
     matrix = matrix / np.clip(norms, 1e-12, None)
 
-    np.save(EMB_PATH, matrix)
-    print(f"Saved embeddings {matrix.shape} to {EMB_PATH}")
+    np.save(config.EMBEDDINGS_PATH, matrix)
+    print(f"Saved embeddings {matrix.shape} to {config.EMBEDDINGS_PATH}")
 
 if __name__ == "__main__":
     main()

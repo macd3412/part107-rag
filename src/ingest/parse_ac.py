@@ -1,10 +1,13 @@
+"""Parse the AC 107-2A advisory-circular PDF into overlapping page chunks."""
+
 import json
 import re
-from pathlib import Path
+
 from pypdf import PdfReader
 
-PDF_PATH = Path("data/raw/ac_107_2a.pdf")
-CHUNKS_PATH = Path("data/processed/chunks.jsonl")
+from src import config
+
+PDF_PATH = config.RAW_DIR / "ac_107_2a.pdf"
 AC_URL = "https://www.faa.gov/regulations_policies/advisory_circulars/index.cfm/go/document.information/documentID/1038977"
 CROSS_REF_RE = re.compile(r"(?:§+\s*\d+\.\d+[a-z0-9()]*|part\s+\d+)", re.IGNORECASE)
 
@@ -12,9 +15,11 @@ MAX_CHARS = 1500
 OVERLAP = 200
 
 def clean_page_text(raw: str) -> str:
+    """Collapse runs of whitespace in extracted PDF text to single spaces."""
     return re.sub(r"\s+", " ", raw).strip()
 
 def split_with_overlap(text: str, max_chars: int = MAX_CHARS, overlap: int = OVERLAP) -> list[str]:
+    """Split ``text`` into windows of ``max_chars`` that overlap by ``overlap``."""
     if len(text) <= max_chars:
         return [text]
     parts: list[str] = []
@@ -56,13 +61,13 @@ def main() -> None:
 
     existing = [
         json.loads(line)
-        for line in CHUNKS_PATH.read_text(encoding="utf-8").splitlines()
+        for line in config.CHUNKS_PATH.read_text(encoding="utf-8").splitlines()
         if line.strip()
     ]
     cfr_only = [c for c in existing if c.get("source_type") != "advisory_circular"]
     combined = cfr_only + ac_chunks
 
-    with CHUNKS_PATH.open("w", encoding="utf-8") as f:
+    with config.CHUNKS_PATH.open("w", encoding="utf-8") as f:
         for chunk in combined:
             f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
 

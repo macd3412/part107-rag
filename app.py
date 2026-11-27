@@ -1,5 +1,6 @@
 from src.rag.pipeline import Part107RAG
 
+
 def main() -> None:
     rag = Part107RAG()
     print("Part 107 Drone FAQ RAG ready! Type 'quit' to exit.\n")
