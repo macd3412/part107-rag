@@ -1,0 +1,62 @@
+[
+  {
+    "question": "What is the maximum groundspeed and altitude under Part 107?",
+    "expected_section": "107.51",
+    "should_refuse": false
+  },
+  {
+    "question": "What lighting is required to fly a small UAS at night?",
+    "expected_section": "107.29",
+    "should_refuse": false
+  },
+  {
+    "question": "How many days do I have to report a serious drone accident to the FAA?",
+    "expected_section": "107.9",
+    "should_refuse": false
+  },
+  {
+    "question": "How often must a remote pilot complete aeronautical knowledge recency?",
+    "expected_section": "107.65",
+    "should_refuse": false
+  },
+  {
+    "question": "What is the minimum age to be eligible for a remote pilot certificate?",
+    "expected_section": "107.61",
+    "should_refuse": false
+  },
+  {
+    "question": "Can one person operate multiple small unmanned aircraft at the same time?",
+    "expected_section": "107.35",
+    "should_refuse": false
+  },
+  {
+    "question": "Can I operate a drone from a moving vehicle?",
+    "expected_section": "107.25",
+    "should_refuse": false
+  },
+  {
+    "question": "Do I need ATC authorization to fly in Class B, C, or D airspace?",
+    "expected_section": "107.41",
+    "should_refuse": false
+  },
+  {
+    "question": "What are the visual line of sight requirements?",
+    "expected_section": "107.31",
+    "should_refuse": false
+  },
+  {
+    "question": "Who is eligible to apply to establish an FAA-recognized identification area (FRIA)?",
+    "expected_section": "89.205",
+    "should_refuse": false
+  },
+  {
+    "question": "What is the drone registration fee in Canada?",
+    "expected_section": null,
+    "should_refuse": true
+  },
+  {
+    "question": "What is the Massachusetts state park fine for flying a drone?",
+    "expected_section": null,
+    "should_refuse": true
+  }
+]

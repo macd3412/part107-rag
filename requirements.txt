@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+pypdf
+numpy
+rank-bm25
+python-dotenv
+google-genai
