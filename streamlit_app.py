@@ -1,4 +1,5 @@
 import streamlit as st
+
 from src.rag.pipeline import Part107RAG
 
 st.set_page_config(page_title="Part 107 Drone FAQ", page_icon="🚁", layout="centered")

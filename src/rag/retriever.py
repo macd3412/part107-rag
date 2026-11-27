@@ -126,7 +126,8 @@ class HybridRetriever:
         """Return the ``top_k`` chunks most relevant to ``query``.
 
         Dense cosine-similarity and BM25 rankings are fused with
-        :func:`reciprocal_rank_fusion`.
+        :func:`reciprocal_rank_fusion`, balancing binding CFR sections with
+        advisory circular guidance when both source types exist.
         """
         q_vec = self.embed_query(query)
 
@@ -136,7 +137,17 @@ class HybridRetriever:
         bm25_scores = self.bm25.get_scores(tokenize(query))
         bm25_ranks = np.argsort(-bm25_scores)
 
-        top_indices = reciprocal_rank_fusion(
-            [vec_ranks.tolist(), bm25_ranks.tolist()], top_k=top_k
+        fused = reciprocal_rank_fusion(
+            [vec_ranks.tolist(), bm25_ranks.tolist()], top_k=len(self.chunks)
         )
-        return [self.chunks[i] for i in top_indices]
+
+        cfr = [i for i in fused if self.chunks[i].get("source_type") == "cfr_regulation"]
+        ac = [i for i in fused if self.chunks[i].get("source_type") == "advisory_circular"]
+        if cfr and ac and top_k >= 2:
+            chosen = cfr[: top_k - 1] + ac[:1]
+            if len(chosen) < top_k:
+                seen = set(chosen)
+                chosen.extend([i for i in fused if i not in seen][: top_k - len(chosen)])
+            return [self.chunks[i] for i in chosen]
+
+        return [self.chunks[i] for i in fused[:top_k]]

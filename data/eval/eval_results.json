@@ -1,0 +1,840 @@
+[
+  {
+    "id": "Q01",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.51"
+    ],
+    "retrieved": [
+      "107.31",
+      "107.51",
+      "89.320",
+      "89.310",
+      "p.29"
+    ],
+    "question": "What is the maximum altitude for a Part 107 flight?",
+    "answer": "Based on the provided regulations, the altitude of the small unmanned aircraft cannot be higher than 400 feet above ground level, unless the small unmanned aircraft:\n1. Is flown within a 400-foot radius of a structure; and\n2. Does not fly higher than 400 feet above the structure's immediate uppermost limit.\n\nCitation: 14 CFR § 107.51(b)"
+  },
+  {
+    "id": "Q02",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.51"
+    ],
+    "retrieved": [
+      "107.125",
+      "107.145",
+      "107.51",
+      "107.39",
+      "p.29"
+    ],
+    "question": "How fast can I fly my drone under Part 107?",
+    "answer": "Under 14 CFR § 107.51(a), the groundspeed of the small unmanned aircraft may not exceed 87 knots (100 miles per hour). \n\nSources: \n* 14 CFR § 107.51(a)\n* FAA AC 107-2A, p. 29"
+  },
+  {
+    "id": "Q03",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.51"
+    ],
+    "retrieved": [
+      "107.51",
+      "107.29",
+      "107.33",
+      "89.310",
+      "p.29"
+    ],
+    "question": "What minimum visibility do I need to fly?",
+    "answer": "Based on the provided regulations, the minimum flight visibility, as observed from the location of the control station, must be no less than 3 statute miles (14 CFR § 107.51(c))."
+  },
+  {
+    "id": "Q04",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.51"
+    ],
+    "retrieved": [
+      "107.51",
+      "107.130",
+      "89.310",
+      "107.33",
+      "p.29"
+    ],
+    "question": "How far do I have to stay from clouds?",
+    "answer": "Based on the provided regulations, the minimum distance of the small unmanned aircraft from clouds must be no less than:\n* 500 feet below the cloud; and\n* 2,000 feet horizontally from the cloud.\n\n(14 CFR § 107.51(d))"
+  },
+  {
+    "id": "Q05",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.51"
+    ],
+    "retrieved": [
+      "107.51",
+      "107.125",
+      "107.130",
+      "107.140",
+      "p.29"
+    ],
+    "question": "I'm inspecting the top of a 600-foot cell tower. What's the highest I can legally fly?",
+    "answer": "Based on the provided regulations, you may fly higher than 400 feet above ground level, provided that the small unmanned aircraft is flown within a 400-foot radius of the structure and does not fly higher than 400 feet above the structure's immediate uppermost limit (14 CFR § 107.51(b)). \n\nTherefore, since the cell tower is 600 feet high, the highest you can legally fly is 400 feet above the structure's immediate uppermost limit (which would be 1,000 feet above ground level), as long as you remain within a 400-foot radius of the cell tower (14 CFR § 107.51(b))."
+  },
+  {
+    "id": "Q06",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.31"
+    ],
+    "retrieved": [
+      "107.31",
+      "107.205",
+      "107.33",
+      "107.17",
+      "p.24"
+    ],
+    "question": "Can I use binoculars or FPV goggles to meet the visual line of sight requirement?",
+    "answer": "Based on the provided regulations and advisory circular excerpts:\n\n* **Binoculars:** Vision aids such as binoculars may **only be used momentarily to enhance situational awareness** (such as to avoid inadvertently flying over persons or conflicting with other aircraft), and cannot be used continuously to satisfy the visual line of sight requirement. Vision is otherwise limited to being unaided by any device other than corrective lenses like eyeglasses or contact lenses (14 CFR § 107.31(a) and FAA AC 107-2A, p. 24).\n* **First Person View (FPV) Devices:** First person view devices **do not satisfy the visual line of sight requirement** (FAA AC 107-2A, p. 24)."
+  },
+  {
+    "id": "Q07",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.31",
+      "107.33"
+    ],
+    "retrieved": [
+      "107.33",
+      "107.31",
+      "107.17",
+      "107.7",
+      "p.24"
+    ],
+    "question": "If I use a visual observer, do I still have to see the drone myself?",
+    "answer": "No. According to 14 CFR § 107.31(b), the ability to see the unmanned aircraft throughout the entire flight must be exercised by either:\n(1) The remote pilot in command and the person manipulating the flight controls of the small unmanned aircraft system; or\n(2) A visual observer. \n\nAdditionally, 14 CFR § 107.33(b) requires the remote pilot in command to ensure that the visual observer is able to see the unmanned aircraft in the manner specified in § 107.31."
+  },
+  {
+    "id": "Q08",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.35",
+      "107.205"
+    ],
+    "retrieved": [
+      "107.35",
+      "107.39",
+      "107.31",
+      "107.125",
+      "p.19"
+    ],
+    "question": "Can one pilot fly two drones at the same time under Part 107?",
+    "answer": "No. A person may not manipulate flight controls, act as a remote pilot in command, or act as a visual observer in the operation of more than one unmanned aircraft at the same time (14 CFR § 107.35)."
+  },
+  {
+    "id": "Q09",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.1",
+      "107.3"
+    ],
+    "retrieved": [
+      "107.3",
+      "107.110",
+      "107.51",
+      "107.25",
+      "p.91"
+    ],
+    "question": "What is the maximum takeoff weight for a drone flown under Part 107, and what happens if mine is heavier?",
+    "answer": "Based on the provided regulations:\n\n* A **small unmanned aircraft** is defined as an unmanned aircraft weighing **less than 55 pounds** on takeoff, including everything on board or otherwise attached to the aircraft (14 CFR § 107.3). \n* The provided excerpts do not contain enough information to state what happens if your specific aircraft is heavier than 55 pounds, other than noting general safety considerations for overweight aircraft (such as potential unsafe conditions affecting takeoff and climb performance) found in FAA AC 107-2A, p. 91."
+  },
+  {
+    "id": "Q10",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.36",
+      "107.205"
+    ],
+    "retrieved": [
+      "107.36",
+      "107.23",
+      "107.39",
+      "107.200",
+      "p.31"
+    ],
+    "question": "Can my drone carry hazardous materials, like a spray tank of a regulated chemical?",
+    "answer": "Based on the provided regulations and guidance, a small unmanned aircraft may not carry hazardous material (14 CFR § 107.36). \n\nHowever, the carriage of any hazardous material on a small unmanned aircraft may only occur if the operator holds an exemption that permits such carriage, with 14 CFR part 11 applying to petitions for exemption (FAA AC 107-2A, p. 31)."
+  },
+  {
+    "id": "Q11",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.21",
+      "107.37"
+    ],
+    "retrieved": [
+      "107.51",
+      "107.37",
+      "107.125",
+      "107.47",
+      "p.29"
+    ],
+    "question": "During a flight a manned helicopter suddenly appears low and close; I climb above 400 feet AGL to avoid it. Did I break the rules?",
+    "answer": "Based on the provided regulation excerpts, operating a small unmanned aircraft higher than 400 feet above ground level is a violation unless specific conditions are met:\n\n* The altitude of the small unmanned aircraft cannot be higher than 400 feet above ground level, *unless* the small unmanned aircraft is flown within a 400-foot radius of a structure and does not fly higher than 400 feet above the structure's immediate uppermost limit (14 CFR § 107.51(b)). \n\nAdditionally, the regulations require that each small unmanned aircraft must yield the right-of-way to all aircraft, and no person may operate a small unmanned aircraft so close to another aircraft as to create a collision hazard (14 CFR § 107.37). \n\nHowever, the provided excerpts do not contain an emergency exception or exemption allowing a remote pilot to exceed the 400-foot AGL altitude limit (14 CFR § 107.51(b)) strictly for the purpose of avoiding another aircraft. Therefore, based solely on the text provided, climbing above 400 feet AGL would violate 14 CFR § 107.51(b) unless it was within a 400-foot radius of a structure as specified in the rule."
+  },
+  {
+    "id": "Q12",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.41"
+    ],
+    "retrieved": [
+      "107.41",
+      "107.45",
+      "89.215",
+      "107.125",
+      "p.25"
+    ],
+    "question": "Do I need permission to fly in Class C airspace?",
+    "answer": "Yes. According to 14 CFR § 107.41, no person may operate a small unmanned aircraft in Class B, Class C, or Class D airspace, or within the lateral boundaries of the surface area of Class E airspace designated for an airport, unless that person has prior authorization from Air Traffic Control (ATC). \n\n*(See also FAA AC 107-2A, p. 25)*"
+  },
+  {
+    "id": "Q13",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.41",
+      "107.43",
+      "107.45",
+      "107.47"
+    ],
+    "retrieved": [
+      "107.41",
+      "107.33",
+      "89.215",
+      "107.125",
+      "p.25"
+    ],
+    "question": "Do I need ATC authorization to fly in Class G airspace?",
+    "answer": "Based on the provided regulations, no prior authorization from Air Traffic Control (ATC) is mentioned as a requirement for Class G (uncontrolled) airspace. \n\nSpecifically, 14 CFR § 107.41 requires prior ATC authorization to operate a small unmanned aircraft in:\n* Class B airspace\n* Class C airspace\n* Class D airspace\n* Within the lateral boundaries of the surface area of Class E airspace designated for an airport."
+  },
+  {
+    "id": "Q14",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.41"
+    ],
+    "retrieved": [
+      "107.3",
+      "107.1",
+      "107.41",
+      "107.2",
+      "p.6"
+    ],
+    "question": "What is LAANC and does Part 107 require it?",
+    "answer": "Based on the provided regulation excerpts, there is no mention or definition of \"LAANC.\" \n\nHowever, regarding operations in certain airspace, 14 CFR § 107.41 states that no person may operate a small unmanned aircraft in Class B, Class C, or Class D airspace or within the lateral boundaries of the surface area of Class E airspace designated for an airport unless that person has prior authorization from Air Traffic Control (ATC) (14 CFR § 107.41).\n\nBecause the provided excerpts do not contain enough information regarding LAANC specifically, I cannot answer whether Part 107 requires LAANC based solely on the provided text."
+  },
+  {
+    "id": "Q15",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.41",
+      "107.43"
+    ],
+    "retrieved": [
+      "107.41",
+      "107.43",
+      "107.37",
+      "107.51",
+      "p.25"
+    ],
+    "question": "There's a small uncontrolled airport 1 mile away in Class G airspace. Can I fly near it without authorization?",
+    "answer": "Yes, you can operate near a small uncontrolled airport located in Class G (uncontrolled) airspace without prior notification or authorization, provided the flight is not conducted within controlled airspace (14 CFR § 107.41; FAA AC 107-2A, p. 25). \n\nHowever, you must adhere to the following operational rules:\n* You may not operate a small unmanned aircraft in a manner that interferes with operations and traffic patterns at any airport, heliport, or seaplane base (14 CFR § 107.43).\n* When operating in the vicinity of an airport, the remote pilot in command (PIC) must be aware of and avoid all traffic patterns and approach corridors to runways and landing areas (FAA AC 107-2A, p. 25).\n* You must yield the right-of-way to all aircraft, airborne vehicles, and launch and reentry vehicles, ensuring you do not pass over, under, or ahead of them unless well clear (14 CFR § 107.37(a)).\n* You must not operate so close to another aircraft as to create a collision hazard (14 CFR § 107.37(b))."
+  },
+  {
+    "id": "Q16",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.47"
+    ],
+    "retrieved": [
+      "107.47",
+      "89.215",
+      "107.64",
+      "107.155",
+      "p.26"
+    ],
+    "question": "How does Part 107 handle temporary flight restrictions (TFRs)?",
+    "answer": "Based on the provided regulations, a remote pilot in command acting under Part 107 must comply with the provisions of §§ 91.137 through 91.145 (which govern temporary flight restrictions) as outlined in **14 CFR § 107.47**."
+  },
+  {
+    "id": "Q17",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.205"
+    ],
+    "retrieved": [
+      "107.205",
+      "107.31",
+      "107.200",
+      "107.29",
+      "p.33"
+    ],
+    "question": "Can I get a waiver to fly beyond visual line of sight?",
+    "answer": "Yes, the Administrator may issue a certificate of waiver to deviate from the visual line of sight aircraft operation regulation, provided that the Administrator finds that the proposed small UAS operation can be safely conducted under the terms of the waiver (14 CFR § 107.200(a), 14 CFR § 107.205(c)). \n\nHowever, no waiver of the visual line of sight provision will be issued to allow the carriage of property of another by aircraft for compensation or hire (14 CFR § 107.205(c))."
+  },
+  {
+    "id": "Q18",
+    "recalled": false,
+    "cited": true,
+    "expected": [
+      "107.205"
+    ],
+    "retrieved": [
+      "107.51",
+      "107.200",
+      "107.21",
+      "107.29",
+      "p.34"
+    ],
+    "question": "Which Part 107 rules can be waived?",
+    "answer": "Based on the provided excerpts, the Administrator may issue a certificate of waiver authorizing a deviation from any regulation specified in **14 CFR § 107.205** (as stated in 14 CFR § 107.200(a)). \n\nAdditionally, FAA Advisory Circular (AC) 107-2A lists **Section 107.51** (Operating limitations for small unmanned aircraft) as one of the sections for which a Certificate of Waiver (CoW) can be applied for and requested (FAA AC 107-2A, p. 34, 5-16)."
+  },
+  {
+    "id": "Q19",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.27",
+      "107.205"
+    ],
+    "retrieved": [
+      "107.59",
+      "107.205",
+      "107.200",
+      "107.57",
+      "p.31"
+    ],
+    "question": "Can I get a waiver to fly within 8 hours of drinking alcohol?",
+    "answer": "Based on the provided regulations, a certificate of waiver issued pursuant to § 107.200 only authorizes deviations from the specific regulations listed in § 107.205 (14 CFR § 107.200(a), 14 CFR § 107.205). \n\nThe regulations concerning alcohol consumption (such as prohibiting serving as a remote PIC, visual observer, or crewmember, or manipulating the controls after consuming an alcoholic beverage within the preceding 8 hours under 14 CFR § 91.17) are not included in the list of regulations subject to waiver under 14 CFR § 107.205. Therefore, you cannot obtain a waiver to fly within 8 hours of drinking alcohol."
+  },
+  {
+    "id": "Q20",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.200"
+    ],
+    "retrieved": [
+      "107.200",
+      "107.205",
+      "107.29",
+      "107.63",
+      "p.34"
+    ],
+    "question": "What has to be in a waiver application?",
+    "answer": "A request for a certificate of waiver must contain:\n\n* A complete description of the proposed operation (14 CFR § 107.200(b); FAA AC 107-2A, p. 34).\n* A justification that establishes that the operation can safely be conducted under the terms of the certificate of waiver (14 CFR § 107.200(b)). According to FAA AC 107-2A (p. 34), this justification must include supporting data and documentation as necessary."
+  },
+  {
+    "id": "Q21",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.61"
+    ],
+    "retrieved": [
+      "107.61",
+      "107.79",
+      "107.63",
+      "107.7",
+      "p.35"
+    ],
+    "question": "How old do I have to be to get a remote pilot certificate?",
+    "answer": "To be eligible for a remote pilot certificate with a small UAS rating, you must be at least 16 years of age (14 CFR § 107.61(a))."
+  },
+  {
+    "id": "Q22",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.61"
+    ],
+    "retrieved": [
+      "107.61",
+      "107.63",
+      "107.12",
+      "107.57",
+      "p.97"
+    ],
+    "question": "What are all the eligibility requirements for a remote pilot certificate?",
+    "answer": "Based on the provided regulations, to be eligible for a remote pilot certificate with a small UAS rating, a person must meet the following requirements (subject to the provisions of 14 CFR §§ 107.57 and 107.59):\n\n(a) Be at least 16 years of age (14 CFR § 107.61(a));\n(b) Be able to read, speak, write, and understand the English language (with the exception that if the applicant is unable to meet this due to medical reasons, the FAA may place necessary operating limitations on the certificate) (14 CFR § 107.61(b));\n(c) Not know or have reason to know that he or she has a physical or mental condition that would interfere with the safe operation of a small unmanned aircraft system (14 CFR § 107.61(c)); and\n(d) Demonstrate aeronautical knowledge by satisfying one of the following conditions, in a manner acceptable to the Administrator:\n   (1) Pass an initial aeronautical knowledge test covering the areas of knowledge specified in § 107.73; or\n   (2) If a person holds a pilot certificate (other than a student pilot certificate) issued under part 61 of this chapter and meets the flight review requirements specified in § 61.56, complete training covering the areas of knowledge specified in § 107.74 (14 CFR § 107.61(d))."
+  },
+  {
+    "id": "Q23",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.65"
+    ],
+    "retrieved": [
+      "107.65",
+      "107.73",
+      "107.74",
+      "107.29",
+      "p.39"
+    ],
+    "question": "How often do I need recurrent training?",
+    "answer": "To maintain your aeronautical knowledge recency and continue exercising the privileges of a remote pilot in command with a small UAS rating, you must successfully complete one of the required methods (such as recurrent training) within the previous **24 calendar months** in a manner acceptable to the Administrator (14 CFR § 107.65)."
+  },
+  {
+    "id": "Q24",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.65"
+    ],
+    "retrieved": [
+      "107.65",
+      "107.63",
+      "107.73",
+      "107.61",
+      "p.40"
+    ],
+    "question": "I passed my knowledge test in June 2023 and haven't done any training since. Can I fly commercially in December 2025?",
+    "answer": "Based on the provided regulations, no, you cannot exercise the privileges of a remote pilot in command (fly commercially) in December 2025 unless you complete the required aeronautical knowledge recency. \n\nTo maintain recency, a remote pilot must accomplish one of the approved options within the previous **24 calendar months** in a manner acceptable to the Administrator (14 CFR § 107.65). \n\nSince you passed your knowledge test in June 2023, the 24-calendar-month period for your aeronautical knowledge recency extends through the end of June 2025. Because December 2025 falls outside of that 24-calendar-month window, your recency has lapsed, and you may not exercise your remote pilot privileges until you satisfy one of the recency requirements outlined in 14 CFR § 107.65 (such as completing recurrent training or passing an initial knowledge test)."
+  },
+  {
+    "id": "Q25",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.71"
+    ],
+    "retrieved": [
+      "107.67",
+      "107.69",
+      "107.73",
+      "107.71",
+      "p.38"
+    ],
+    "question": "If I fail the knowledge test, when can I retake it?",
+    "answer": "If you fail the knowledge test, you may not reapply for the test for 14 calendar days after failing it (14 CFR § 107.71)."
+  },
+  {
+    "id": "Q26",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.61",
+      "107.63",
+      "107.74"
+    ],
+    "retrieved": [
+      "107.79",
+      "107.63",
+      "107.12",
+      "107.61",
+      "p.35"
+    ],
+    "question": "I'm already a private pilot under Part 61. How do I get my remote pilot certificate?",
+    "answer": "Based on the provided regulations, if you hold a pilot certificate issued under part 61 (other than a student pilot certificate) and meet the flight review requirements specified in § 61.56, you may obtain a remote pilot certificate with a small UAS rating by:\n\n1. Completing an initial training course under Part 107 that covers the areas of knowledge specified in § 107.74 (14 CFR § 107.63(a)(2)).\n2. Making your application in a form and manner acceptable to the Administrator, which must be submitted to the responsible Flight Standards office, a designated pilot examiner, an airman certification representative for a pilot school, a certificated flight instructor, or other person authorized by the Administrator (14 CFR § 107.63(a) and (b)(1)).\n3. Having the person accepting your application verify your identity in a manner acceptable to the Administrator (14 CFR § 107.63(b)(2)).\n4. Showing that you meet the flight review requirements specified in § 61.56 by logbook endorsement or other manner acceptable to the Administrator (14 CFR § 107.63(b)(3))."
+  },
+  {
+    "id": "Q27",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "107.77"
+    ],
+    "retrieved": [
+      "89.230",
+      "107.7",
+      "107.79",
+      "107.160",
+      "p.74"
+    ],
+    "question": "I moved. Do I have to tell the FAA?",
+    "answer": "Based on the provided regulation excerpts, there is no information or requirement stated regarding notifying the FAA of a change of address or moving. Therefore, the provided excerpts do not contain enough information to answer your question safely."
+  },
+  {
+    "id": "Q28",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.12"
+    ],
+    "retrieved": [
+      "107.12",
+      "107.61",
+      "107.63",
+      "107.64",
+      "p.19"
+    ],
+    "question": "Can someone without a remote pilot certificate fly the drone?",
+    "answer": "Yes, a person without a remote pilot certificate may manipulate the flight controls of a small unmanned aircraft system, provided that:\n\n1. That person is under the direct supervision of a remote pilot in command; and\n2. The remote pilot in command has the ability to immediately take direct control of the flight of the small unmanned aircraft.\n\nSources: 14 CFR § 107.12(a)(2) and FAA AC 107-2A, p. 19."
+  },
+  {
+    "id": "Q29",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.17",
+      "107.61"
+    ],
+    "retrieved": [
+      "107.61",
+      "107.7",
+      "107.12",
+      "107.17",
+      "p.35"
+    ],
+    "question": "Do I need an FAA medical certificate to fly under Part 107?",
+    "answer": "Based on the provided regulations and excerpts, an FAA medical certificate is not listed as a requirement to obtain a remote pilot certificate or to operate under Part 107. \n\nInstead, to be eligible for a remote pilot certificate with a small UAS rating, an applicant must:\n* Not know or have reason to know that he or she has a physical or mental condition that would interfere with the safe operation of a small unmanned aircraft system (14 CFR § 107.61(c)).\n\nAdditionally, regarding medical conditions during operations:\n* No person may manipulate the flight controls of a small UAS or act as a remote pilot in command, visual observer, or direct participant if they know or have reason to know that they have a physical or mental condition that would interfere with the safe operation of the system (14 CFR § 107.17)."
+  },
+  {
+    "id": "Q30",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "107.39"
+    ],
+    "retrieved": [
+      "107.140",
+      "107.125",
+      "107.105",
+      "107.145",
+      "p.46"
+    ],
+    "question": "When can I fly over people without meeting a Category 1-4 standard?",
+    "answer": "Based on the provided regulation excerpts, the provided text does not contain enough information to answer when you can fly over people without meeting a Category 1–4 standard (the text only details operations over human beings under Categories 1, 2, 3, and 4 pursuant to 14 CFR § 107.105). Therefore, I cannot answer this question using the provided excerpts."
+  },
+  {
+    "id": "Q31",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "107.110"
+    ],
+    "retrieved": [
+      "107.115",
+      "107.125",
+      "107.140",
+      "107.120",
+      "p.54"
+    ],
+    "question": "What makes a drone eligible for Category 1 operations over people?",
+    "answer": "Based on the provided regulation excerpts, there is no information regarding the specific eligibility requirements for Category 1 operations over people. Therefore, the provided excerpts do not contain enough information to answer your question safely."
+  },
+  {
+    "id": "Q32",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.115",
+      "107.120",
+      "107.125",
+      "107.130"
+    ],
+    "retrieved": [
+      "107.125",
+      "107.135",
+      "107.130",
+      "107.115",
+      "p.48"
+    ],
+    "question": "What is the difference between Category 2 and Category 3 drones?",
+    "answer": "Based on the provided excerpts, the regulations outline specific eligibility criteria and requirements for Category 3 small unmanned aircraft, but the provided excerpts do not contain enough complete information to fully contrast Category 2 and Category 3 drones in order to provide a comprehensive difference between the two categories. \n\nHowever, looking at the provided text regarding each category:\n* **Category 3 Operations / Aircraft Eligibility:** To be eligible for use in Category 3 operations, the small unmanned aircraft must be designed, produced, or modified such that it will not cause injury to a human being equivalent to or greater than the severity of injury caused by a transfer of 25 foot-pounds of kinetic energy upon impact from a rigid object, does not contain exposed rotating parts that would lacerate human skin, and does not contain safety defects (14 CFR § 107.130(a)). Additionally, a remote pilot must not operate a Category 3 aircraft over open-air assemblies of human beings (14 CFR § 107.125(b)). \n* **Category 2 Operations:** The provided excerpts mention that a remote pilot conducting Category 2 operations must use an aircraft eligible pursuant to § 107.120(a) and listed on an FAA-accepted declaration of compliance (14 CFR § 107.115(a)), and prohibits sustained flight over open-air assemblies unless it meets specific requirements of § 89.110 or § 89.115(a) (14 CFR § 107.115(b)). However, the specific design or kinetic energy criteria for Category 2 are not included in the provided excerpts.\n\nThe provided excerpts do not contain enough information to fully detail all differences between Category 2 and Category 3 drones."
+  },
+  {
+    "id": "Q33",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.125",
+      "107.205"
+    ],
+    "retrieved": [
+      "107.125",
+      "107.140",
+      "107.130",
+      "107.145",
+      "p.49"
+    ],
+    "question": "I have a Category 3 drone. Can I film over the crowd at an outdoor concert?",
+    "answer": "No, you cannot operate a Category 3 small unmanned aircraft over an open-air assembly of human beings, which includes dense gatherings at outdoor concert venues. \n\nSpecifically, the regulations state:\n* A remote pilot in command conducting Category 3 operations **must not operate the small unmanned aircraft over open-air assemblies of human beings** (14 CFR § 107.125(b)).\n* Additionally, Category 3 operations are not allowed over an open-air assembly of persons, which are generally understood to include dense gatherings such as those at concert venues (FAA AC 107-2A, p. 49)."
+  },
+  {
+    "id": "Q34",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.135"
+    ],
+    "retrieved": [
+      "107.135",
+      "107.120",
+      "107.130",
+      "107.125",
+      "p.74"
+    ],
+    "question": "My Category 2 drone's label fell off. Can I still fly it over people?",
+    "answer": "If a Category 2 label affixed to a small unmanned aircraft is damaged, destroyed, or missing, a remote pilot in command may still conduct operations over human beings only if they label the aircraft in English such that the label is legible, prominent, and will remain on the small unmanned aircraft for the duration of the operation **before** conducting operations over human beings. The label must correctly identify the category or categories of operation over human beings that the small unmanned aircraft is qualified to conduct (14 CFR § 107.135)."
+  },
+  {
+    "id": "Q35",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.25"
+    ],
+    "retrieved": [
+      "107.25",
+      "107.145",
+      "107.205",
+      "107.125",
+      "p.46"
+    ],
+    "question": "Can I fly my drone from a moving car while filming a rural road race?",
+    "answer": "No, you cannot operate a small unmanned aircraft system from a moving land vehicle unless the small unmanned aircraft is flown over a sparsely populated area and is not transporting another person's property for compensation or hire (14 CFR § 107.25(b)). \n\nAdditionally, operating from a moving aircraft is strictly prohibited (14 CFR § 107.25(a))."
+  },
+  {
+    "id": "Q36",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.145"
+    ],
+    "retrieved": [
+      "107.145",
+      "107.125",
+      "107.105",
+      "107.140",
+      "p.46"
+    ],
+    "question": "Can I fly a Category 1, 2 or 3 drone over people in moving cars?",
+    "answer": "Yes, you may operate a Category 1, 2, or 3 small unmanned aircraft over human beings located inside a moving vehicle, provided that the operation meets the conditions specified in 14 CFR § 107.145:\n\n1. **Category Compliance:** The operation must occur in accordance with § 107.110 for Category 1 operations, § 107.115 for Category 2 operations, or § 107.125 for Category 3 operations (14 CFR § 107.145(a)).\n2. **Site and Notice Requirements or Flight Restrictions:** Throughout the operation, the small unmanned aircraft must satisfy **one** of the following conditions:\n   * **(1)** The operation must occur within or over a closed- or restricted-access site, and all human beings located inside a moving vehicle within that site must be on notice that a small unmanned aircraft may fly over them (14 CFR § 107.145(b)(1)); **or**\n   * **(2)** The small unmanned aircraft must not maintain sustained flight over moving vehicles (14 CFR § 107.145(b)(2))."
+  },
+  {
+    "id": "Q37",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.29"
+    ],
+    "retrieved": [
+      "107.29",
+      "107.29",
+      "107.205",
+      "107.73",
+      "p.81"
+    ],
+    "question": "What do I need to fly at night under Part 107?",
+    "answer": "To operate a small unmanned aircraft system at night under Part 107, you must meet the following requirements:\n\n1. **Remote Pilot Training/Testing:** The remote pilot in command must have completed an initial knowledge test or training under § 107.65 after April 6, 2021 (14 CFR § 107.29(a)(1)).\n2. **Anti-Collision Lighting:** The small unmanned aircraft must be equipped with lighted anti-collision lighting that is:\n   - Visible for at least 3 statute miles, and\n   - Has a flash rate sufficient to avoid a collision (14 CFR § 107.29(a)(2)).\n   *(Note: The remote pilot in command may reduce the intensity of the anti-collision lighting if operating conditions make it in the interest of safety to do so, but the lights may not be extinguished.)*"
+  },
+  {
+    "id": "Q38",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.29"
+    ],
+    "retrieved": [
+      "107.29",
+      "107.31",
+      "107.205",
+      "107.51",
+      "p.22"
+    ],
+    "question": "What is civil twilight and what does it require?",
+    "answer": "Based on the provided regulations, civil twilight refers to:\n* Except for Alaska, a period of time that begins 30 minutes before official sunrise and ends at official sunrise (14 CFR § 107.29(c)(1)).\n* Except for Alaska, a period of time that begins at official sunset and ends 30 minutes after official sunset (14 CFR § 107.29(c)(2)).\n* In Alaska, the period of civil twilight as defined in the Air Almanac (14 CFR § 107.29(c)(3)).\n\nDuring periods of civil twilight, operating a small unmanned aircraft system requires that the small unmanned aircraft has lighted anti-collision lighting visible for at least 3 statute miles that has a flash rate sufficient to avoid a collision (14 CFR § 107.29(b)). The remote pilot in command may reduce the intensity of, but may not extinguish, the anti-collision lighting if they determine that, because of operating conditions, it would be in the interest of safety to do so (14 CFR § 107.29(b))."
+  },
+  {
+    "id": "Q39",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "89.105",
+      "89.110",
+      "89.115"
+    ],
+    "retrieved": [
+      "89.310",
+      "89.320",
+      "89.520",
+      "89.510",
+      "p.32"
+    ],
+    "question": "What are my options for complying with Remote ID?",
+    "answer": "Based on the provided regulations, unmanned aircraft may comply with Remote ID in the following ways depending on their type and production:\n\n* **Standard Remote Identification Unmanned Aircraft:** An unmanned aircraft produced under a design approval or production approval issued under 14 CFR part 21 may be designed and produced to meet the minimum performance requirements for standard remote identification unmanned aircraft established in **14 CFR § 89.310** in accordance with an FAA-accepted means of compliance (**14 CFR § 89.510(b)(1)**). Alternatively, it may be equipped with Automatic Dependent Surveillance-Broadcast (ADS-B) Out equipment that meets the requirements of **14 CFR § 91.225** (**14 CFR § 89.510(b)(2)**).\n* **Remote Identification Broadcast Modules:** A remote identification broadcast module can be used, provided it is designed and produced to meet the minimum performance requirements established in **14 CFR § 89.320** in accordance with an FAA-accepted means of compliance (**14 CFR § 89.520(a)**). \n\n*(Note: The provided excerpts do not contain the full set of compliance options for every operating scenario, as they cut off discussing \"Small unmanned aircraft without remote identification\" in FAA AC 107-2A.)*"
+  },
+  {
+    "id": "Q40",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "89.110",
+      "89.115"
+    ],
+    "retrieved": [
+      "89.310",
+      "89.115",
+      "89.110",
+      "89.310",
+      "p.32"
+    ],
+    "question": "My Remote ID stops broadcasting mid-flight. What do I do?",
+    "answer": "If your remote identification stops broadcasting mid-flight, the person manipulating the flight controls must land the unmanned aircraft as soon as practicable, depending on the type of operation:\n\n* For a standard remote identification unmanned aircraft, you must land the unmanned aircraft as soon as practicable if it is no longer broadcasting the message elements of § 89.305 (14 CFR § 89.110(a)(2)).\n* For an unmanned aircraft using a remote identification broadcast module, you must land the unmanned aircraft as soon as practicable if it is no longer broadcasting the message elements of § 89.315 (14 CFR § 89.115(a)(4))."
+  },
+  {
+    "id": "Q41",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "107.13"
+    ],
+    "retrieved": [
+      "107.110",
+      "89.501",
+      "107.130",
+      "107.120",
+      "p.32"
+    ],
+    "question": "My drone weighs 0.5 pounds and I use it for paid real estate photos. Does it need to be registered?",
+    "answer": "Based on the provided excerpts, the exact answer to whether a 0.5-pound drone used for paid real estate photos must be registered is not contained in the provided regulations. \n\nHowever, regarding Remote Identification and registration exemptions, the provided text mentions that unmanned aircraft weighing 0.55 pounds or less on takeoff (including everything on board or attached) are generally exempt from the design and production requirements for Remote ID under 14 CFR § 89.501(c)(3). Additionally, FAA Advisory Circular 107-2A notes that small unmanned aircraft that weigh 0.55 pounds or less are \"not required to be registered under part 48,\" but points out that they \"must comply with remote identification requirements when operated under any operating part for which registration is required\" (FAA AC 107-2A, p. 32). \n\nBecause the provided excerpts do not include the full text of Part 48 or Part 107 concerning commercial operations and registration mandates, the provided information does not contain enough details to fully answer your specific registration requirement question."
+  },
+  {
+    "id": "Q42",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.9"
+    ],
+    "retrieved": [
+      "107.7",
+      "107.130",
+      "107.120",
+      "107.9",
+      "p.17"
+    ],
+    "question": "When do I have to report a drone accident to the FAA, and how fast?",
+    "answer": "Based on the provided regulations, you must report an operation of a small unmanned aircraft to the FAA no later than **10 calendar days** after an operation that involves at least:\n1. Serious injury to any person or any loss of consciousness; or\n2. Damage to any property (other than the small unmanned aircraft) where the cost of repair exceeds $500, or the fair market value of the property exceeds $500 in the event of a total loss.\n\n**Citations:** \n* 14 CFR § 107.9\n* FAA AC 107-2A, p. 17"
+  },
+  {
+    "id": "Q43",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.9"
+    ],
+    "retrieved": [
+      "107.9",
+      "107.7",
+      "107.79",
+      "107.135",
+      "p.17"
+    ],
+    "question": "My drone hit a parked car. The body shop quotes $450, and the drone itself is destroyed ($1,800). Do I have to report it?",
+    "answer": "Based on the provided regulations, you do not have to report this accident to the FAA. \n\nUnder 14 CFR § 107.9(b), you are required to report operations involving damage to any property *other than* the small unmanned aircraft, unless the cost of repair does not exceed $500 (or the fair market value does not exceed $500 in the event of total loss). \n\nBecause the damage to the property other than your drone (the parked car) has a repair cost of $450, which does not exceed $500, the condition under 14 CFR § 107.9(b)(1) is satisfied, and the accident is not required to be reported."
+  },
+  {
+    "id": "Q44",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.15",
+      "107.49"
+    ],
+    "retrieved": [
+      "107.49",
+      "107.19",
+      "107.15",
+      "107.31",
+      "p.89"
+    ],
+    "question": "What does Part 107 require me to do before every flight?",
+    "answer": "Based on the provided regulations, prior to every flight, you must:\n\n1. **Check the small unmanned aircraft system** to determine whether it is in a condition for safe operation (14 CFR § 107.15(a)).\n2. **Assess the operating environment**, considering risks to persons and property in the immediate vicinity both on the surface and in the air. This assessment must include:\n   - Local weather conditions;\n   - Local airspace and any flight restrictions;\n   - The location of persons and property on the surface; and\n   - Other ground hazards. (14 CFR § 107.49(a))\n3. **Ensure that all persons directly participating** in the operation are informed about the operating conditions, emergency procedures, contingency procedures, roles and responsibilities, and potential hazards (14 CFR § 107.49(b)).\n4. **Ensure that all control links** between the ground control station and the small unmanned aircraft are working properly (14 CFR § 107.49(c)).\n5. **Ensure that there is enough available power** for the small unmanned aircraft system to operate for the intended operational time, if the aircraft is powered (14 CFR § 107.49(d)).\n6. **Ensure that any object attached or carried** by the small unmanned aircraft is secure and does not adversely affect the flight characteristics or controllability of the aircraft (14 CFR § 107.49(e)).\n7. **Ensure the aircraft meets applicable requirements** (§ 107.110, § 107.120(a), § 107.130(a), or § 107.140) if the operation will be conducted over human beings under subpart D (14 CFR § 107.49(f))."
+  },
+  {
+    "id": "Q45",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.27"
+    ],
+    "retrieved": [
+      "107.27",
+      "107.59",
+      "107.57",
+      "107.15",
+      "p.31"
+    ],
+    "question": "What are the alcohol rules for drone pilots?",
+    "answer": "Based on the provided regulations and advisory material, a person manipulating the flight controls of a small unmanned aircraft system, acting as a remote pilot in command (PIC), or serving as a visual observer (VO) must comply with the provisions of 14 CFR § 91.17 (as required by 14 CFR § 107.27). \n\nSpecifically, part 107 prohibits a person from serving as a remote PIC, VO, other crewmember, or manipulating the controls if they:\n* Have consumed any alcoholic beverage within the preceding 8 hours;\n* Are under the influence of alcohol;\n* Have a blood alcohol concentration of .04 percent or greater; or\n* Are using a drug that affects the person's mental or physical capabilities (14 CFR § 107.27, 14 CFR § 91.17, and FAA AC 107-2A, p. 31).\n\nAdditionally, refusing to submit to an alcohol blood concentration test when requested by law enforcement in accordance with § 91.17(c), or refusing to furnish/authorize the release of test results requested by the Administrator, is grounds for denial of a remote pilot certificate application for up to 1 year, or the suspension/revocation of the certificate (14 CFR § 107.59)."
+  },
+  {
+    "id": "Q46",
+    "recalled": true,
+    "cited": true,
+    "expected": [
+      "107.59"
+    ],
+    "retrieved": [
+      "107.59",
+      "107.7",
+      "107.57",
+      "107.27",
+      "p.12"
+    ],
+    "question": "What happens if I refuse an alcohol test requested by law enforcement?",
+    "answer": "Based on the provided regulations, a refusal to submit to a test to indicate the percentage by weight of alcohol in the blood when requested by a law enforcement officer (in accordance with § 91.17(c)) is grounds for:\n\n(a) Denial of an application for a remote pilot certificate with a small UAS rating for a period of up to 1 year after the date of that refusal; or\n(b) Suspension or revocation of a remote pilot certificate with a small UAS rating.\n\nSource: 14 CFR § 107.59"
+  },
+  {
+    "id": "Q47",
+    "status": "PASS",
+    "question": "Can I fly over my neighbor's backyard and film them?",
+    "answer": "Based on the provided regulations, to conduct operations over human beings (such as your neighbor in their backyard), you must comply with the specific requirements of 14 CFR Part 107, Subpart D (14 CFR § 107.105). \n\nSpecifically, if you are operating under **Category 3 operations**, you must meet the conditions outlined in **14 CFR § 107.125(c)**:\n1. The operation must be within or over a closed- or restricted-access site, and all human beings located within that site must be on notice that a small unmanned aircraft may fly over them (14 CFR § 107.125(c)(1)); **OR**\n2. The small unmanned aircraft must not maintain sustained flight over any human being unless that human being is directly participating in the operation, or is located under a covered structure or inside a stationary vehicle that provides reasonable protection from a falling small unmanned aircraft (14 CFR § 107.125(c)(2)).\n\nAdditionally, under **14 CFR § 107.125(b)**, Category 3 operations must **not** be conducted over open-air assemblies of human beings. \n\nIf your neighbor's backyard is not a closed- or restricted-access site where they have been put on notice, or if you plan to maintain sustained flight over them while they are outside, you cannot conduct the operation over them unless it meets one of the approved regulatory categories and conditions outlined in 14 CFR Part 107, Subpart D."
+  },
+  {
+    "id": "Q48",
+    "recalled": false,
+    "cited": false,
+    "expected": [
+      "107.1"
+    ],
+    "retrieved": [
+      "89.501",
+      "107.140",
+      "107.2",
+      "89.205",
+      "p.12"
+    ],
+    "question": "What rules apply to me if I only fly for fun?",
+    "answer": "Based on the provided excerpts, part 107 does not apply to limited recreational operations of UAS that occur in accordance with Title 49 of the United States Code (49 U.S.C.) § 44809 (FAA AC 107-2A, p. 12). \n\nAdditionally, regarding Remote Identification design and production, Subpart F does not apply to home-built unmanned aircraft (except for those designed and produced to be standard remote identification unmanned aircraft) or unmanned aircraft that weigh 0.55 pounds or less on takeoff (14 CFR § 89.501(c))."
+  },
+  {
+    "id": "Q49",
+    "status": "PASS",
+    "question": "Do I need liability insurance to fly commercially under Part 107?",
+    "answer": "Based on the provided regulation excerpts, there is no mention or requirement regarding liability insurance for flying commercially under Part 107. \n\nThe provided excerpts do not contain enough information to answer your question about liability insurance."
+  },
+  {
+    "id": "Q50",
+    "status": "PASS",
+    "question": "What are the rules for routine BVLOS package delivery under Part 108?",
+    "answer": "Based on the provided regulation excerpts, there is no mention of \"Part 108\" or rules for routine BVLOS package delivery. The provided text only contains regulations under 14 CFR Part 107 and FAA Advisory Circular AC 107-2A. \n\nSpecifically regarding the transportation of property for compensation or hire under Part 107, the provided excerpts state:\n* Operations involving the transport of property must be conducted within the visual line of sight (VLOS) of the remote pilot, and this limitation cannot be waived for the transportation of property (FAA AC 107-2A, p. 31).\n* No person may operate a small unmanned aircraft system from a moving land or water-borne vehicle if it is transporting another person's property for compensation or hire (14 CFR § 107.25(b)), and this limitation cannot be waived (FAA AC 107-2A, p. 31).\n\nThe provided excerpts do not contain enough information to answer your question regarding Part 108 or routine BVLOS package delivery."
+  }
+]
