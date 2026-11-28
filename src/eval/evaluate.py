@@ -1,14 +1,20 @@
-"""Run the 50-question Part 107 evaluation suite."""
+"""Run the Part 107 evaluation suite with LLM-as-a-judge refusal grading."""
 
 import argparse
 import json
+import os
 import time
 from collections import defaultdict
 from pathlib import Path
 
+import requests
+from dotenv import load_dotenv
+
 from src import config
 from src.rag.agent import AgenticPart107RAG
 from src.rag.pipeline import Part107RAG
+
+load_dotenv()
 
 RESULTS_PATH = Path("data/eval/eval_results.json")
 REFUSAL_PHRASES = [
@@ -39,15 +45,56 @@ REFUSAL_PHRASES = [
 ]
 
 
+def judge_refusal(question: str, answer: str, api_key: str | None = None) -> tuple[bool, str]:
+    """Use Gemini at temperature=0 to grade whether an out-of-scope answer refused cleanly."""
+    key = api_key or os.environ["GEMINI_API_KEY"]
+    prompt = (
+        "You are grading an FAA Part 107 RAG assistant on an out-of-scope question.\n"
+        f"Question: {question}\n"
+        f"Assistant Answer: {answer}\n\n"
+        "Did the assistant appropriately refuse or clarify that the provided FAA Part 107 / "
+        "Part 89 regulations do not cover the core out-of-scope topic, without inventing "
+        "external laws, non-corpus CFR sections, pricing, or hardware specs?\n"
+        "Reply with exactly one line starting with 'PASS: ' or 'FAIL: ' and a brief reason."
+    )
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.0},
+    }
+    for model in config.GENERATION_MODELS:
+        url = f"{config.GEMINI_API_BASE}/models/{model}:generateContent"
+        try:
+            resp = requests.post(
+                url, params={"key": key}, json=payload, timeout=config.REQUEST_TIMEOUT
+            )
+        except requests.exceptions.Timeout:
+            continue
+        if resp.status_code == 200:
+            verdict = resp.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+            return verdict.upper().startswith("PASS"), verdict
+        if resp.status_code in {429, 503}:
+            time.sleep(config.RETRY_BACKOFF_SECONDS)
+        elif resp.status_code == 404:
+            continue
+        else:
+            resp.raise_for_status()
+    raise RuntimeError("LLM refusal judge is temporarily unavailable.")
+
+
 def main() -> None:
-    """Evaluate retrieval recall, citation accuracy, and refusal guardrails."""
+    """Evaluate retrieval recall, citation accuracy, refusal guardrails, and latency."""
     parser = argparse.ArgumentParser(description="Evaluate Part 107 RAG")
+    parser.add_argument("--mode", choices=["agent", "single"], default="agent")
+    parser.add_argument("--judge", choices=["llm", "keyword"], default="llm")
     parser.add_argument(
-        "--mode", choices=["agent", "single"], default="agent", help="Pipeline mode"
+        "--only-refusals", action="store_true", help="Run only out-of-scope refusal cases"
     )
     args = parser.parse_args()
 
     cases = json.loads(config.EVAL_PATH.read_text(encoding="utf-8"))
+    if args.only_refusals:
+        cases = [c for c in cases if c.get("should_refuse", False)]
+
     rag = AgenticPart107RAG() if args.mode == "agent" else Part107RAG()
 
     in_scope_total = 0
@@ -78,14 +125,19 @@ def main() -> None:
 
         if should_refuse:
             refusal_total += 1
-            refused = any(p in answer.lower() for p in REFUSAL_PHRASES)
+            if args.judge == "llm":
+                refused, reason = judge_refusal(q, answer)
+            else:
+                refused = any(p in answer.lower() for p in REFUSAL_PHRASES)
+                reason = "keyword match"
             if refused:
                 refusal_hits += 1
-            print(f"[{qid}] REFUSAL {'PASS' if refused else 'FAIL'} ({diff}) | {q}")
+            print(f"[{qid}] REFUSAL {'PASS' if refused else 'FAIL'} ({diff}) | {q} -> {reason}")
             results.append(
                 {
                     "id": qid,
                     "status": "PASS" if refused else "FAIL",
+                    "judge_reason": reason,
                     "question": q,
                     "answer": answer,
                 }
@@ -123,26 +175,20 @@ def main() -> None:
         json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
-    print(f"\n=== {len(cases)}-Question Evaluation Summary ({args.mode}) ===")
-    print(
-        f"Retrieval Recall : {recall_hits}/{in_scope_total} "
-        f"({recall_hits / in_scope_total:.0%})"
-    )
-    print(
-        f"Citation Accuracy: {citation_hits}/{in_scope_total} "
-        f"({citation_hits / in_scope_total:.0%})"
-    )
-    print(
-        f"Refusal Guardrail: {refusal_hits}/{refusal_total} "
-        f"({refusal_hits / refusal_total:.0%})"
-    )
+    print(f"\n=== {len(cases)}-Question Evaluation Summary ({args.mode}, judge={args.judge}) ===")
+    if in_scope_total:
+        print(f"Retrieval Recall : {recall_hits}/{in_scope_total} ({recall_hits / in_scope_total:.0%})")
+        print(f"Citation Accuracy: {citation_hits}/{in_scope_total} ({citation_hits / in_scope_total:.0%})")
+    if refusal_total:
+        print(f"Refusal Guardrail: {refusal_hits}/{refusal_total} ({refusal_hits / refusal_total:.0%})")
     avg_lat = sum(latencies) / len(latencies)
     print(f"Avg Lookup Time  : {avg_lat:.2f}s")
-    print("\nBy Difficulty (Recall + Cite both OK):")
-    for diff in ["Easy", "Medium", "Hard"]:
-        if diff in by_diff:
-            ok, tot = by_diff[diff]
-            print(f"  {diff:6s}: {ok}/{tot} ({ok / tot:.0%})")
+    if by_diff:
+        print("\nBy Difficulty (Recall + Cite both OK):")
+        for diff in ["Easy", "Medium", "Hard"]:
+            if diff in by_diff:
+                ok, tot = by_diff[diff]
+                print(f"  {diff:6s}: {ok}/{tot} ({ok / tot:.0%})")
     print(f"\nDetailed results saved to {RESULTS_PATH}")
 
 

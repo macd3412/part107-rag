@@ -35,7 +35,7 @@ Comprises 120 in-scope questions + 6 boundary out-of-scope questions that map to
 
 - **Intentional Safety-Over-Coverage Trade-Off:** I chose safety over coverage on purpose—tightening the grounding prompt stopped pretraining leaks (raising refusals from **33% to 92%** after fixing `evaluate.py` to recognize `Q180`'s *"do not specifically address"* phrasing) in exchange for a small drop in citation accuracy (**94% to 88%**) and recall (**94% to 91%**). In a compliance tool, refusing cleanly beats guessing from outside memory.
 - **By Difficulty (After Fix):** Easy `88%` (35/40) · Medium `90%` (46/51) · Hard `86%` (30/35)
-- **Remaining 2 Misses (`Q171`, `Q185`):** `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Next fix: use an LLM-as-judge refusal grader and add a partial-coverage rule for questions touching Part 107 that depend on external statutes.
+- **Remaining 2 Misses (`Q171`, `Q185`):** `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Implemented an LLM-as-judge refusal grader (`--judge llm`, `23/24 = 96%` on re-eval, leaving only `Q171` where `AC 107-2A` briefly mentions 5.8 GHz).
 - **Automated Checks:** `pytest` unit tests + `ruff check .` clean via GitHub Actions CI.
 
 ## Quickstart & Running Tests
