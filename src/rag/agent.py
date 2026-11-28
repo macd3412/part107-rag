@@ -8,19 +8,22 @@ from dotenv import load_dotenv
 
 from src import config
 from src.rag.retriever import HybridRetriever
+from src.tools.tfr import check_active_tfrs
 
 load_dotenv()
 
 SYSTEM_PROMPT = (
     "You are an FAA Part 107 & Remote ID (Part 89) assistant. "
-    "Call search_regulations 1 to 2 times to gather relevant excerpts. If the first "
-    "search misses, rewrite your query using formal FAA terms (e.g., 'change of "
-    "address' instead of 'moved', 'recreational' instead of 'fly for fun'). "
-    "Answer ONLY from the retrieved excerpts and ALWAYS cite the exact CFR or AC "
-    "section number (e.g., 14 CFR § 107.51(b)) from those excerpts. "
+    "Call search_regulations 1 to 2 times to gather relevant excerpts, and call "
+    "check_active_tfrs whenever the user asks about active TFRs, a specific state/city, "
+    "or whether they can fly at a location right now. If the first search misses, "
+    "rewrite your query using formal FAA terms (e.g., 'change of address' instead of "
+    "'moved', 'recreational' instead of 'fly for fun'). "
+    "Answer ONLY from the retrieved excerpts and tool outputs, and ALWAYS cite the "
+    "exact CFR, AC, or NOTAM identifier from those results. "
     "Do NOT answer from outside memory or cite any regulation, state law, "
-    "national park rule, or hardware spec that is not in the retrieved excerpts. "
-    "If the excerpts do not directly answer the question, state clearly that the "
+    "national park rule, or hardware spec not in the tool outputs. "
+    "If the tool outputs do not directly answer the question, state clearly that the "
     "provided regulations do not cover this topic."
 )
 
@@ -43,14 +46,37 @@ TOOLS = [
                     },
                     "required": ["query"],
                 },
-            }
+            },
+            {
+                "name": "check_active_tfrs",
+                "description": (
+                    "Check live active and scheduled FAA Temporary Flight Restrictions "
+                    "(TFRs) from tfr.faa.gov filtered by 2-letter US state code and/or keyword."
+                ),
+                "parameters": {
+                    "type": "OBJECT",
+                    "properties": {
+                        "state": {
+                            "type": "STRING",
+                            "description": "2-letter US state code (e.g., 'MA', 'TX'), or empty.",
+                        },
+                        "keyword": {
+                            "type": "STRING",
+                            "description": "Optional city or keyword filter (e.g., 'Boston'), or empty.",
+                        },
+                        "lat": {"type": "NUMBER", "description": "Optional latitude if user GPS is provided."},
+                        "lon": {"type": "NUMBER", "description": "Optional longitude if user GPS is provided."},
+                    },
+                    "required": [],
+                },
+            },
         ]
     }
 ]
 
 
 class AgenticPart107RAG:
-    """Multi-step tool-calling RAG agent over FAA Part 107 regulations."""
+    """Multi-step tool-calling RAG agent over FAA Part 107 and live TFRs."""
 
     def __init__(self) -> None:
         self.retriever = HybridRetriever()
@@ -108,32 +134,49 @@ class AgenticPart107RAG:
             contents.append(candidate)
             response_parts = []
             for call in calls:
-                query = call["args"]["query"]
-                if verbose:
-                    print(f"  [Step {step + 1}] search_regulations({query!r})")
-                hits = self.retriever.search(query, top_k=5)
-                for h in hits:
-                    if h["chunk_id"] not in seen_ids:
-                        seen_ids.add(h["chunk_id"])
-                        collected.append(h)
+                name = call["name"]
+                args = call.get("args", {})
+                if name == "check_active_tfrs":
+                    state = str(args.get("state", ""))
+                    keyword = str(args.get("keyword", ""))
+                    lat = args.get("lat")
+                    lon = args.get("lon")
+                    if verbose:
+                        print(f"  [Step {step + 1}] check_active_tfrs(state={state!r}, lat={lat}, lon={lon})")
+                    result_text = check_active_tfrs(state=state, keyword=keyword, lat=lat, lon=lon)
+                    collected.append({
+                        "chunk_id": f"tfr_{state}_{keyword}",
+                        "citation": f"FAA Live TFRs ({state or 'US'})",
+                        "section_title": "Active & Scheduled NOTAMs",
+                        "url": "https://tfr.faa.gov/",
+                        "text": result_text,
+                    })
+                else:
+                    query = str(args.get("query", question))
+                    if verbose:
+                        print(f"  [Step {step + 1}] search_regulations({query!r})")
+                    hits = self.retriever.search(query, top_k=5)
+                    for h in hits:
+                        if h["chunk_id"] not in seen_ids:
+                            seen_ids.add(h["chunk_id"])
+                            collected.append(h)
+                    result_text = "\n\n".join(
+                        f"Source: {h['citation']} ({h['url']})\n{h['text']}" for h in hits
+                    )
 
-                snippet = "\n\n".join(
-                    f"Source: {h['citation']} ({h['url']})\n{h['text']}" for h in hits
-                )
                 response_parts.append({
                     "functionResponse": {
-                        "name": call["name"],
-                        "response": {"results": snippet},
+                        "name": name,
+                        "response": {"results": result_text},
                     }
                 })
             contents.append({"role": "user", "parts": response_parts})
 
-        # Fallback: force final answer from collected excerpts without tools
         context = "\n\n---\n\n".join(
             f"Source: {c['citation']} ({c['url']})\n{c['text']}" for c in collected
         )
         final = self._call_gemini(
-            [{"role": "user", "parts": [{"text": f"Regulations:\n{context}\n\nQuestion: {question}"}]}],
+            [{"role": "user", "parts": [{"text": f"Context:\n{context}\n\nQuestion: {question}"}]}],
             use_tools=False,
         )
         final_parts = final["candidates"][0]["content"].get("parts", [])
