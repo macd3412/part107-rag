@@ -1,27 +1,40 @@
+"""Streamlit web UI for the Part 107 & Remote ID Drone FAQ RAG."""
+
 import streamlit as st
 
+from src.rag.agent import AgenticPart107RAG
 from src.rag.pipeline import Part107RAG
 
 st.set_page_config(page_title="Part 107 Drone FAQ", page_icon="🚁", layout="centered")
 
+
 @st.cache_resource
-def get_rag() -> Part107RAG:
+def get_agent_rag() -> AgenticPart107RAG:
+    """Load and cache the multi-step agentic RAG."""
+    return AgenticPart107RAG()
+
+
+@st.cache_resource
+def get_single_rag() -> Part107RAG:
+    """Load and cache the single-pass RAG."""
     return Part107RAG()
+
 
 st.title("Part 107 & Remote ID Drone FAQ")
 st.caption(
-    "Grounded in 14 CFR Part 107, Part 89, and FAA Advisory Circular AC 107-2A. "
+    "Grounded in 14 CFR Part 107, Part 89, referenced Parts 48/61/91, and FAA AC 107-2A. "
     "Educational prototype only—always verify current FAA rules and LAANC before flying."
 )
 
 EXAMPLES = [
+    "I moved. Do I have to tell the FAA?",
     "What is the maximum altitude and groundspeed under Part 107?",
     "What lighting is required to fly a small UAS at night?",
-    "Who is eligible to apply to establish a FRIA?",
-    "What are the Category 2 operations over people requirements?",
+    "What are my options for complying with Remote ID?",
 ]
 
 with st.sidebar:
+    use_agent = st.toggle("Agentic multi-step search", value=True)
     st.subheader("Try an example")
     selected_example = None
     for q in EXAMPLES:
@@ -47,9 +60,11 @@ if prompt:
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
-        with st.spinner("Searching Part 107, Part 89 & AC 107-2A..."):
-            rag = get_rag()
-            answer, sources = rag.ask(prompt)
+        with st.spinner("Searching FAA regulations..."):
+            if use_agent:
+                answer, sources = get_agent_rag().ask(prompt, verbose=False)
+            else:
+                answer, sources = get_single_rag().ask(prompt)
         st.markdown(answer)
         with st.expander(f"Retrieved Sources ({len(sources)})"):
             for s in sources:
