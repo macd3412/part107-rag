@@ -51,6 +51,7 @@ def main() -> None:
     refusal_hits = 0
     by_diff: dict[str, list[int]] = defaultdict(lambda: [0, 0])
     results: list[dict] = []
+    latencies: list[float] = []
 
     for case in cases:
         qid = case.get("id", "?")
@@ -61,10 +62,12 @@ def main() -> None:
         should_refuse = case.get("should_refuse", False)
         diff = case.get("difficulty", "Unknown")
 
+        t0 = time.perf_counter()
         if args.mode == "agent":
             answer, chunks = rag.ask(q, verbose=False)
         else:
             answer, chunks = rag.ask(q, top_k=5)
+        latencies.append(time.perf_counter() - t0)
         retrieved = [c["section_number"] for c in chunks]
 
         if should_refuse:
@@ -127,6 +130,8 @@ def main() -> None:
         f"Refusal Guardrail: {refusal_hits}/{refusal_total} "
         f"({refusal_hits / refusal_total:.0%})"
     )
+    avg_lat = sum(latencies) / len(latencies)
+    print(f"Avg Lookup Time  : {avg_lat:.2f}s")
     print("\nBy Difficulty (Recall + Cite both OK):")
     for diff in ["Easy", "Medium", "Hard"]:
         if diff in by_diff:

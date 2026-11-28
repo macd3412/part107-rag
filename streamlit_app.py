@@ -1,5 +1,7 @@
 """Streamlit web UI for the Part 107 & Remote ID Drone FAQ RAG."""
 
+import time
+
 import streamlit as st
 
 from src.rag.agent import AgenticPart107RAG
@@ -47,6 +49,12 @@ if "messages" not in st.session_state:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
+        if msg.get("latency_s") is not None:
+            saved_min = max(0.0, 10.0 - msg["latency_s"] / 60.0)
+            st.caption(
+                f"Answered in {msg['latency_s']:.1f}s "
+                f"(~{saved_min:.1f} min saved vs. 10-min manual lookup)"
+            )
         if msg.get("sources"):
             with st.expander(f"Retrieved Sources ({len(msg['sources'])})"):
                 for s in msg["sources"]:
@@ -61,15 +69,27 @@ if prompt:
 
     with st.chat_message("assistant"):
         with st.spinner("Searching FAA regulations..."):
+            t0 = time.perf_counter()
             if use_agent:
                 answer, sources = get_agent_rag().ask(prompt, verbose=False)
             else:
                 answer, sources = get_single_rag().ask(prompt)
+            latency_s = time.perf_counter() - t0
         st.markdown(answer)
+        saved_min = max(0.0, 10.0 - latency_s / 60.0)
+        st.caption(
+            f"Answered in {latency_s:.1f}s "
+            f"(~{saved_min:.1f} min saved vs. 10-min manual lookup)"
+        )
         with st.expander(f"Retrieved Sources ({len(sources)})"):
             for s in sources:
                 st.markdown(f"- **[{s['citation']}]({s['url']})** — {s['section_title']}")
 
     st.session_state.messages.append(
-        {"role": "assistant", "content": answer, "sources": sources}
+        {
+            "role": "assistant",
+            "content": answer,
+            "sources": sources,
+            "latency_s": latency_s,
+        }
     )
