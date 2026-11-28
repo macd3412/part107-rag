@@ -1,4 +1,4 @@
-"""Streamlit web UI for the Part 107 & Remote ID Drone FAQ RAG."""
+"""Streamlit web UI for the Part 107 Field Ops RAG."""
 
 import time
 
@@ -8,7 +8,7 @@ from streamlit_geolocation import streamlit_geolocation
 from src.rag.agent import AgenticPart107RAG
 from src.rag.pipeline import Part107RAG
 
-st.set_page_config(page_title="Part 107 Drone FAQ", page_icon="🚁", layout="centered")
+st.set_page_config(page_title="Part 107 Field Ops", page_icon="🚁", layout="centered")
 
 
 @st.cache_resource
@@ -23,14 +23,14 @@ def get_single_rag() -> Part107RAG:
     return Part107RAG()
 
 
-st.title("Part 107 & Remote ID Drone FAQ")
+st.title("Part 107 Field Ops")
 st.caption(
     "Grounded in 14 CFR Part 107, Part 89, referenced Parts 48/61/91, FAA AC 107-2A, "
     "and live FAA TFRs (tfr.faa.gov). Educational prototype only—verify NOTAMs & LAANC before flight."
 )
 
 EXAMPLES = [
-    "Are there any active TFRs near me right now?",
+    "Can I fly right now? Check local TFRs and weather.",
     "I moved. Do I have to tell the FAA?",
     "What is the maximum altitude and groundspeed under Part 107?",
     "What are my options for complying with Remote ID?",

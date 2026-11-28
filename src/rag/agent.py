@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 from src import config
 from src.rag.retriever import HybridRetriever
 from src.tools.tfr import check_active_tfrs
+from src.tools.weather import check_aviation_weather
 
 load_dotenv()
 
@@ -16,7 +17,7 @@ SYSTEM_PROMPT = (
     "You are an FAA Part 107 & Remote ID (Part 89) assistant. "
     "Call search_regulations 1 to 2 times to gather relevant excerpts, and call "
     "check_active_tfrs whenever the user asks about active TFRs, a specific state/city, "
-    "or whether they can fly at a location right now. If the first search misses, "
+    "or whether they can fly at a location right now, and call check_aviation_weather whenever the user asks about current weather, wind, visibility, or clouds. If the first search misses, "
     "rewrite your query using formal FAA terms (e.g., 'change of address' instead of "
     "'moved', 'recreational' instead of 'fly for fun'). "
     "Answer ONLY from the retrieved excerpts and tool outputs, and ALWAYS cite the "
@@ -66,6 +67,22 @@ TOOLS = [
                         },
                         "lat": {"type": "NUMBER", "description": "Optional latitude if user GPS is provided."},
                         "lon": {"type": "NUMBER", "description": "Optional longitude if user GPS is provided."},
+                    },
+                    "required": [],
+                },
+            },
+            {
+                "name": "check_aviation_weather",
+                "description": (
+                    "Fetch live aviation METAR weather (visibility, clouds, wind) "
+                    "by 4-letter ICAO airport code or user GPS (lat, lon)."
+                ),
+                "parameters": {
+                    "type": "OBJECT",
+                    "properties": {
+                        "station_id": {"type": "STRING", "description": "Optional 4-letter ICAO code (e.g., KBOS)."},
+                        "lat": {"type": "NUMBER", "description": "Optional latitude from user GPS."},
+                        "lon": {"type": "NUMBER", "description": "Optional longitude from user GPS."},
                     },
                     "required": [],
                 },
@@ -149,6 +166,20 @@ class AgenticPart107RAG:
                         "citation": f"FAA Live TFRs ({state or 'US'})",
                         "section_title": "Active & Scheduled NOTAMs",
                         "url": "https://tfr.faa.gov/",
+                        "text": result_text,
+                    })
+                elif name == "check_aviation_weather":
+                    sid = str(args.get("station_id", ""))
+                    lat = args.get("lat")
+                    lon = args.get("lon")
+                    if verbose:
+                        print(f"  [Step {step + 1}] check_aviation_weather(station_id={sid!r}, lat={lat}, lon={lon})")
+                    result_text = check_aviation_weather(station_id=sid, lat=lat, lon=lon)
+                    collected.append({
+                        "chunk_id": f"metar_{sid}_{lat}_{lon}",
+                        "citation": f"Live METAR ({sid or 'Nearest'})",
+                        "section_title": "AviationWeather.gov Observation",
+                        "url": "https://aviationweather.gov/",
                         "text": result_text,
                     })
                 else:

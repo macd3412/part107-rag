@@ -1,4 +1,4 @@
-# Part 107 & Remote ID Drone FAQ RAG
+# Part 107 Field Ops
 
 **[Live Demo](https://part107-rag-crroj772gwmg67r7zyjfsh.streamlit.app)** | **[GitHub CI](https://github.com/macd3412/part107-rag/actions)**
 
