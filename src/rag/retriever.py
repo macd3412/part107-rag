@@ -116,7 +116,7 @@ class HybridRetriever:
                 vec = np.array(values, dtype=np.float32)
                 return vec / max(float(np.linalg.norm(vec)), 1e-12)
             if resp.status_code in {429, 503}:
-                time.sleep(config.RETRY_BACKOFF_SECONDS)
+                time.sleep(20 if resp.status_code == 429 else 4)
                 continue
             resp.raise_for_status()
 
