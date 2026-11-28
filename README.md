@@ -4,10 +4,12 @@
 
 A zero-framework **Agentic RAG + Live Preflight Copilot** for U.S. FAA small unmanned aircraft operations—built with pure Python (`numpy`, `rank-bm25`, `requests`, and `pypdf`). Combines **14 CFR Part 107 / Part 89 / AC 107-2A** retrieval with **live GPS TFR boundary checks** (`tfr.faa.gov`) and **live METAR aviation weather** (`aviationweather.gov`).
 
-## Why Part 107 Field Ops? & Estimated Business Impact
-- **Measured Speedup:** Manual lookups across eCFR, FAA PDFs, TFR maps, and METARs take ~10 minutes; this agent averages **2.35 seconds** across 150 benchmark queries (~9.96 minutes saved per lookup).
-- **Team Time Savings (20-pilot team, 50 weeks/yr):** **~83 hours/year** saved at 0.5 lookups/pilot/week, or **~166 hours/year** (~4 workweeks) at 1 lookup/pilot/week.
-- **Compliance Risk Reduction:** Verified **91% recall** and **88% out-of-scope refusal** across 150 unseen questions, helping teams avoid FAA civil penalties ($20,000+ per violation) and certificate suspension.
+## Why Part 107 Field Ops? & Estimated Impact
+As a drone pilot navigating FAA rules in the field, compliance questions rarely map to a single paragraph. Pilots ask scenario-based questions combining night lighting (`§ 107.29`), operations over people (`Subpart D`), Remote ID (`Part 89`), active TFRs (`§ 107.47`), and weather minimums (`§ 107.51`).
+
+- **Latency vs. Estimated Manual Lookup:** Measured average query time is **2.35 seconds** across 150 benchmark queries, compared to an **estimated** ~10-minute manual lookup across eCFR, 100-page FAA PDFs, TFR maps, and METARs (~9.96 minutes estimated savings per lookup).
+- **Estimated Team Time Savings (20-pilot team, 50 weeks/yr):** **~83 hours/year** at 0.5 lookups/pilot/week, or **~166 hours/year** (~4 workweeks) at 1 lookup/pilot/week (based on the 10-minute manual baseline assumption).
+- **Compliance Risk Reduction:** Verified **91% recall**, **88% citation accuracy**, and **88% out-of-scope refusal** on 150 unseen questions—reducing the risk of misreading or missing applicable rules before flight.
 
 ## Data Sources & Live Tools
 - **14 CFR Part 107, Part 89 & Cross-Referenced Sections (137 chunks):** Official eCFR XML (`§ 48.15`, `§ 61.56`, `§ 91.17`, `§§ 91.137–91.145`) parsed at section boundaries with subpart breadcrumbs.
@@ -23,8 +25,13 @@ A zero-framework **Agentic RAG + Live Preflight Copilot** for U.S. FAA small unm
 | **2. Source-Balanced (4 CFR + 1 AC)** | 85% (40/47) | 87% (41/47) | 100% (3/3) |
 | **3. Agentic Multi-Step RAG** | **98% (46/47)** | **96% (45/47)** | **100% (3/3)** |
 
-**150-Question Unseen Benchmark (Agentic RAG):** `115/126 (91%)` Recall · `111/126 (88%)` Citation · `21/24 (88%)` Refusal Guardrails · `2.35s` Avg Lookup Time (Easy `88%`, Medium `90%`, Hard `86%`).  
-**Automated Checks:** `pytest` unit tests + `ruff check .` clean via GitHub Actions CI.
+**150-Question Unseen Expansion Benchmark (Agentic RAG):**  
+The 150-question expansion set comprises 120 in-scope questions + 6 boundary out-of-scope questions that map to a Part 107 exclusion/rule (`Q183`, `Q184`, `Q194`, `Q195`, `Q196`, `Q200`, scored on citing that section = **126** section-graded items) and **24** pure out-of-scope refusal checks:
+- **Retrieval Recall:** `115/126 (91%)` · **Citation Accuracy:** `111/126 (88%)`
+- **Refusal Guardrails:** `21/24 (88%)` *(up from 33% after tightening prompt against pretraining leaks)*
+- **Measured Avg Lookup Time:** `2.35s` · **By Difficulty:** Easy `88%`, Medium `90%`, Hard `86%`
+- **Analyzing the 3 Refusal Misses (`Q171`, `Q180`, `Q185`):** `Q180` (HOA bans) actually refused using *"do not specifically address"* (missed our string-match list), `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Next fix: use an LLM-as-judge refusal grader and add a partial-coverage instruction for questions that touch Part 107 but depend on external statutes.
+- **Automated Checks:** `pytest` unit tests + `ruff check .` clean via GitHub Actions CI.
 
 ## Quickstart & Running Tests
 
