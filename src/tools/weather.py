@@ -2,9 +2,8 @@
 
 import requests
 
+from src import config
 from src.tools.tfr import haversine_miles
-
-METAR_URL = "https://aviationweather.gov/api/data/metar"
 
 
 def _format_metar(m: dict, dist_mi: float | None = None) -> str:
@@ -43,7 +42,7 @@ def check_aviation_weather(
 
     try:
         resp = requests.get(
-            METAR_URL, params=params, headers={"User-Agent": "Part107FieldOps/1.0"}, timeout=30
+            config.METAR_URL, params=params, headers={"User-Agent": "Part107FieldOps/1.0"}, timeout=30
         )
         if resp.status_code == 204 or not resp.text.strip():
             return "No recent METAR stations found for that location."

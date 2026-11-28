@@ -5,12 +5,8 @@ import time
 
 import requests
 
-TFR_LIST_URL = "https://tfr.faa.gov/tfrapi/exportTfrList"
-TFR_WFS_URL = (
-    "https://tfr.faa.gov/geoserver/TFR/ows"
-    "?service=WFS&version=1.1.0&request=GetFeature"
-    "&typeName=TFR:V_TFR_LOC&outputFormat=application/json&maxFeatures=300"
-)
+from src import config
+
 _CACHE_TTL_SECONDS = 300
 _list_cache: tuple[float, list[dict]] | None = None
 _geo_cache: tuple[float, list[dict]] | None = None
@@ -24,7 +20,7 @@ def fetch_tfr_list() -> list[dict]:
         return _list_cache[1]
 
     resp = requests.get(
-        TFR_LIST_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=15
+        config.TFR_LIST_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=15
     )
     resp.raise_for_status()
     data = resp.json()
@@ -41,7 +37,7 @@ def fetch_tfr_geojson() -> list[dict]:
         return _geo_cache[1]
 
     resp = requests.get(
-        TFR_WFS_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=20
+        config.TFR_WFS_URL, headers={"User-Agent": "Mozilla/5.0"}, timeout=20
     )
     resp.raise_for_status()
     features = resp.json().get("features", [])

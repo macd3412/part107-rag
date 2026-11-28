@@ -40,3 +40,11 @@ GEMINI_API_BASE = "https://generativelanguage.googleapis.com/v1beta"
 REQUEST_TIMEOUT = 45
 MAX_RETRIES = 2
 RETRY_BACKOFF_SECONDS = 3
+
+TFR_LIST_URL = "https://tfr.faa.gov/tfrapi/exportTfrList"
+TFR_WFS_URL = (
+    "https://tfr.faa.gov/geoserver/TFR/ows"
+    "?service=WFS&version=1.1.0&request=GetFeature"
+    "&typeName=TFR:V_TFR_LOC&outputFormat=application/json&maxFeatures=300"
+)
+METAR_URL = "https://aviationweather.gov/api/data/metar"
