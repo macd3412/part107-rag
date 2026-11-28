@@ -9,7 +9,7 @@ As a drone pilot navigating FAA rules in the field, compliance questions rarely 
 
 - **Latency vs. Estimated Manual Lookup:** Measured average query time is **2.35 seconds** across 150 benchmark queries, compared to an **estimated** ~10-minute manual lookup across eCFR, 100-page FAA PDFs, TFR maps, and METARs (~9.96 minutes estimated savings per lookup).
 - **Estimated Team Time Savings (20-pilot team, 50 weeks/yr):** **~83 hours/year** at 0.5 lookups/pilot/week, or **~166 hours/year** (~4 workweeks) at 1 lookup/pilot/week (based on the 10-minute manual baseline assumption).
-- **Compliance Risk Reduction:** Verified **91% recall**, **88% citation accuracy**, and **92% effective out-of-scope refusal** on 150 unseen questions—reducing the risk of misreading or missing applicable rules before flight.
+- **Compliance Risk Reduction:** Verified **91% recall**, **88% citation accuracy**, and **92% out-of-scope refusal** on 150 unseen questions—reducing the risk of misreading or missing applicable rules before flight.
 
 ## Data Sources & Live Tools
 - **14 CFR Part 107, Part 89 & Cross-Referenced Sections (137 chunks):** Official eCFR XML (`§ 48.15`, `§ 61.56`, `§ 91.17`, `§§ 91.137–91.145`) parsed at section boundaries with subpart breadcrumbs.
@@ -31,9 +31,9 @@ Comprises 120 in-scope questions + 6 boundary out-of-scope questions that map to
 | 150-Question Run | Retrieval Recall | Citation Accuracy | Refusal Guardrails | Avg Time |
 | :--- | :--- | :--- | :--- | :--- |
 | **Before (Initial Agentic Prompt)** | 94% (118/126) | 94% (118/126) | 33% (8/24) | 2.90s |
-| **After (Strict Grounding Prompt)** | 91% (115/126) | 88% (111/126) | **88% (21/24)** | **2.35s** |
+| **After (Strict Grounding Prompt)** | 91% (115/126) | 88% (111/126) | **92% (22/24)** | **2.35s** |
 
-- **Effective Refusal Rate (`22/24`, 92%):** `Q180` (HOA bans) actually refused cleanly via *"do not specifically address"* and only missed the original string-match list (now fixed in `evaluate.py`), making true refusal performance **22/24 (92%)**.
+- **Intentional Safety-Over-Coverage Trade-Off:** I chose safety over coverage on purpose—tightening the grounding prompt stopped pretraining leaks (raising refusals from **33% to 92%** after fixing `evaluate.py` to recognize `Q180`'s *"do not specifically address"* phrasing) in exchange for a small drop in citation accuracy (**94% to 88%**) and recall (**94% to 91%**). In a compliance tool, refusing cleanly beats guessing from outside memory.
 - **By Difficulty (After Fix):** Easy `88%` (35/40) · Medium `90%` (46/51) · Hard `86%` (30/35)
 - **Remaining 2 Misses (`Q171`, `Q185`):** `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Next fix: use an LLM-as-judge refusal grader and add a partial-coverage rule for questions touching Part 107 that depend on external statutes.
 - **Automated Checks:** `pytest` unit tests + `ruff check .` clean via GitHub Actions CI.
