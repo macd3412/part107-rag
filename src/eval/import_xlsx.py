@@ -1,19 +1,23 @@
+"""Convert the Part 107 Excel test set into ``data/eval/part107_eval.json``."""
+
 import json
 import re
 from pathlib import Path
 
 import openpyxl
 
-from src.config import EVAL_PATH
+from src import config
 
 CANDIDATES = [
     Path("part107_test_set.xlsx"),
     Path.home() / "Downloads" / "part107_test_set.xlsx",
     Path.home() / "Desktop" / "part107_test_set.xlsx",
 ]
-SEC_RE = re.compile(r"\b(?:107|89)\.\d+\b")
+SEC_RE = re.compile(r"\b(?:107|89|48|61|91)\.\d+\b")
+
 
 def find_xlsx() -> Path:
+    """Locate ``part107_test_set.xlsx`` in common local folders."""
     for path in CANDIDATES:
         if path.exists():
             return path
@@ -21,7 +25,9 @@ def find_xlsx() -> Path:
         "Could not find part107_test_set.xlsx in current folder, ~/Downloads, or ~/Desktop."
     )
 
+
 def main() -> None:
+    """Parse all questions from Excel and write ``config.EVAL_PATH``."""
     xlsx_path = find_xlsx()
     wb = openpyxl.load_workbook(xlsx_path, data_only=True)
     ws = wb["Questions"]
@@ -55,9 +61,12 @@ def main() -> None:
             "should_refuse": should_refuse,
         })
 
-    EVAL_PATH.parent.mkdir(parents=True, exist_ok=True)
-    EVAL_PATH.write_text(json.dumps(cases, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"Imported {len(cases)} questions from {xlsx_path} -> {EVAL_PATH}")
+    config.EVAL_PATH.parent.mkdir(parents=True, exist_ok=True)
+    config.EVAL_PATH.write_text(
+        json.dumps(cases, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
+    print(f"Imported {len(cases)} questions from {xlsx_path} -> {config.EVAL_PATH}")
+
 
 if __name__ == "__main__":
     main()

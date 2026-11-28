@@ -507,6 +507,7 @@
     "question": "My drone weighs 0.5 pounds and I use it for paid real estate photos. Does it need to be registered?",
     "expected_answer": "Yes. The under-0.55-pound exemption applies only to drones flown exclusively for recreation under 49 U.S.C. 44809. Any Part 107 operation must be registered.",
     "expected_sections": [
+      "48.15",
       "107.13"
     ],
     "should_refuse": false
@@ -556,6 +557,7 @@
     "question": "What are the alcohol rules for drone pilots?",
     "expected_answer": "No acting as RPIC, manipulator or VO within 8 hours of drinking, while under the influence, while using a drug that affects faculties contrary to safety, or with a 0.04 or greater alcohol concentration.",
     "expected_sections": [
+      "91.17",
       "107.27"
     ],
     "should_refuse": false
