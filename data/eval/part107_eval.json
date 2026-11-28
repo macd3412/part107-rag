@@ -1,83 +1,97 @@
 [
   {
-    "id": "Q01",
+    "id": "Q51",
     "topic": "Operating limits",
     "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "What is the maximum altitude for a Part 107 flight?",
-    "expected_answer": "400 feet AGL, unless flown within a 400-foot radius of a structure and no higher than 400 feet above the structure's immediate uppermost limit.",
+    "question": "is there a minimum altitude i have to stay above when flying under 107?",
+    "expected_answer": "No. Part 107 sets a maximum altitude (400 feet AGL, with the structure exception) but no minimum altitude. You still may not fly in a careless or reckless way that endangers people or property.",
     "expected_sections": [
+      "107.23",
       "107.51"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q02",
-    "topic": "Operating limits",
+    "id": "Q52",
+    "topic": "Right of way",
     "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "How fast can I fly my drone under Part 107?",
-    "expected_answer": "Groundspeed may not exceed 87 knots (100 mph).",
-    "expected_sections": [
-      "107.51"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q03",
-    "topic": "Operating limits",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "What minimum visibility do I need to fly?",
-    "expected_answer": "At least 3 statute miles flight visibility, observed from the control station.",
-    "expected_sections": [
-      "107.51"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q04",
-    "topic": "Operating limits",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "How far do I have to stay from clouds?",
-    "expected_answer": "At least 500 feet below the cloud and at least 2,000 feet horizontally from the cloud.",
-    "expected_sections": [
-      "107.51"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q05",
-    "topic": "Operating limits",
-    "difficulty": "Medium",
     "question_type": "Scenario",
-    "question": "I'm inspecting the top of a 600-foot cell tower. What's the highest I can legally fly?",
-    "expected_answer": "Up to 1,000 feet AGL (400 feet above the tower's top), as long as the drone stays within a 400-foot radius of the tower.",
+    "question": "Crop duster just showed up low over the field I'm mapping. Who has to get out of the way, me or him?",
+    "expected_answer": "You do. The small UAS must yield the right of way to all aircraft, airborne vehicles and launch and reentry vehicles, and may not pass over, under or ahead of them unless well clear.",
     "expected_sections": [
-      "107.51"
+      "107.37"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q06",
-    "topic": "Operating limits",
-    "difficulty": "Medium",
+    "id": "Q53",
+    "topic": "Right of way",
+    "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "Can I use binoculars or FPV goggles to meet the visual line of sight requirement?",
-    "expected_answer": "No. VLOS must be kept with vision unaided by any device other than corrective lenses. Goggles or binoculars do not satisfy it (a visual observer with unaided vision can be used instead).",
+    "question": "How close am I allowed to fly to another aircraft?",
+    "expected_answer": "Part 107 gives no distance. You may not fly so close to another aircraft as to create a collision hazard, and you must yield right of way.",
     "expected_sections": [
-      "107.31"
+      "107.37"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q07",
+    "id": "Q54",
+    "topic": "Airspace and LAANC",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "theres a restricted area on the sectional near my job site. does my 107 cert let me fly in it?",
+    "expected_answer": "No. You may not operate in prohibited or restricted areas unless you have permission from the using or controlling agency.",
+    "expected_sections": [
+      "107.45"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q55",
     "topic": "Operating limits",
-    "difficulty": "Medium",
-    "question_type": "Multi-step",
-    "question": "If I use a visual observer, do I still have to see the drone myself?",
-    "expected_answer": "No. VLOS can be kept by the RPIC and manipulator, or by a visual observer. If a VO is used, the RPIC, VO and manipulator must keep effective communication at all times and the RPIC must make sure the VO can see the aircraft as 107.31 requires.",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Is it legal to drop stuff from my drone? Like releasing a fishing line or tossing candy at a party?",
+    "expected_answer": "Dropping objects is allowed only if it does not create an undue hazard to persons or property. Releasing an object in a way that creates an undue hazard is prohibited.",
+    "expected_sections": [
+      "107.23"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q56",
+    "topic": "Moving vehicles",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Can I launch and fly my drone from an airplane while it's flying?",
+    "expected_answer": "No. Operating a small UAS from a moving aircraft is prohibited (this rule is on the waiver list).",
+    "expected_sections": [
+      "107.25",
+      "107.205"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q57",
+    "topic": "Crew roles",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Me and a coworker both run the drone on jobs. Who is legally in charge?",
+    "expected_answer": "The remote pilot in command (RPIC). An RPIC must be designated before or during the flight, and that person is directly responsible for and is the final authority on the operation.",
+    "expected_sections": [
+      "107.19"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q58",
+    "topic": "Crew roles",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Do I need a visual observer to fly legally?",
+    "expected_answer": "No. A visual observer is optional. VLOS can be kept by the RPIC and the person manipulating the controls; if a VO is used, the 107.33 coordination rules apply.",
     "expected_sections": [
       "107.31",
       "107.33"
@@ -85,237 +99,1144 @@
     "should_refuse": false
   },
   {
-    "id": "Q08",
-    "topic": "Operating limits",
+    "id": "Q59",
+    "topic": "Drugs and alcohol",
     "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "Can one pilot fly two drones at the same time under Part 107?",
-    "expected_answer": "No. A person may not act as RPIC, manipulator or VO for more than one unmanned aircraft at a time. This rule is waivable.",
+    "question": "Does the drinking rule apply to my visual observer too, or just the pilot?",
+    "expected_answer": "It applies to the VO too. The person manipulating the controls, the RPIC and the visual observer must all comply with 91.17 and 91.19 (8 hours bottle to throttle, not under the influence, under 0.04 BAC).",
     "expected_sections": [
-      "107.35",
-      "107.205"
+      "91.17",
+      "107.27"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q09",
-    "topic": "Operating limits",
-    "difficulty": "Medium",
+    "id": "Q60",
+    "topic": "Definitions",
+    "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "What is the maximum takeoff weight for a drone flown under Part 107, and what happens if mine is heavier?",
-    "expected_answer": "The aircraft must weigh less than 55 pounds at takeoff, including everything on board or attached. At 55 pounds or more it is not a small UAS, so Part 107 does not apply; that operation needs another path such as a section 44807 exemption.",
+    "question": "What's the difference between a 'small unmanned aircraft' and a 'small unmanned aircraft system' in the regs?",
+    "expected_answer": "The small unmanned aircraft is the aircraft itself (under 55 pounds at takeoff, including everything on board). The small UAS is the aircraft plus its associated elements, including communication links and the components that control it, that are required for safe and efficient operation in the National Airspace System.",
     "expected_sections": [
-      "107.1",
       "107.3"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q10",
-    "topic": "Operating limits",
-    "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "Can my drone carry hazardous materials, like a spray tank of a regulated chemical?",
-    "expected_answer": "No. A small UA may not carry hazardous material as defined in 49 CFR 171.8. This section is not on the waiver list.",
-    "expected_sections": [
-      "107.36",
-      "107.205"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q11",
-    "topic": "Operating limits",
-    "difficulty": "Hard",
-    "question_type": "Scenario",
-    "question": "During a flight a manned helicopter suddenly appears low and close; I climb above 400 feet AGL to avoid it. Did I break the rules?",
-    "expected_answer": "In an in-flight emergency requiring immediate action, the RPIC may deviate from any Part 107 rule to the extent needed. On FAA request the RPIC must send a written report of the deviation.",
-    "expected_sections": [
-      "107.21",
-      "107.37"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q12",
-    "topic": "Airspace and LAANC",
+    "id": "Q61",
+    "topic": "Definitions",
     "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "Do I need permission to fly in Class C airspace?",
-    "expected_answer": "Yes. Operations in Class B, C or D airspace, or within the lateral boundaries of an airport's Class E surface area, need prior ATC authorization.",
+    "question": "What counts as a 'control station'?",
+    "expected_answer": "An interface used by the remote pilot to control the flight path of the small unmanned aircraft.",
     "expected_sections": [
-      "107.41"
+      "107.3"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q13",
-    "topic": "Airspace and LAANC",
-    "difficulty": "Medium",
+    "id": "Q62",
+    "topic": "Operating limits",
+    "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "Do I need ATC authorization to fly in Class G airspace?",
-    "expected_answer": "No ATC authorization is required by 107.41 in Class G. All other rules still apply, including TFRs, restricted/prohibited areas and not interfering with airport traffic.",
+    "question": "I wear contacts. Am I still flying 'unaided' for line of sight?",
+    "expected_answer": "Yes. Corrective lenses (spectacles or contact lenses) are the one aid allowed when keeping visual line of sight.",
     "expected_sections": [
-      "107.41",
-      "107.43",
-      "107.45",
-      "107.47"
+      "107.3",
+      "107.31"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q14",
-    "topic": "Airspace and LAANC",
-    "difficulty": "Medium",
+    "id": "Q63",
+    "topic": "Operating limits",
+    "difficulty": "Easy",
     "question_type": "Lookup",
-    "question": "What is LAANC and does Part 107 require it?",
-    "expected_answer": "Part 107 requires prior ATC authorization for controlled airspace but does not mention LAANC. LAANC (Low Altitude Authorization and Notification Capability) is an FAA system for getting that authorization near-instantly; the FAA DroneZone is the other route.",
+    "question": "Is there a general rule against flying recklessly even if I'm not breaking a specific limit?",
+    "expected_answer": "Yes. No person may operate a small UAS in a careless or reckless manner so as to endanger the life or property of another.",
     "expected_sections": [
-      "107.41"
+      "107.23"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q15",
-    "topic": "Airspace and LAANC",
+    "id": "Q64",
+    "topic": "Inspection and enforcement",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Can the FAA ask to inspect or test my drone?",
+    "expected_answer": "Yes. On request, you must allow the FAA to make any test or inspection of the small UAS, the remote pilot in command, the person manipulating the controls and, if applicable, the visual observer, to determine compliance.",
+    "expected_sections": [
+      "107.7"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q65",
+    "topic": "Inspection and enforcement",
+    "difficulty": "Easy",
+    "question_type": "Scenario",
+    "question": "A cop walks up while I'm flying and asks for my license. Do I have to show it?",
+    "expected_answer": "Yes. You must have your remote pilot certificate and identification (with photo, signature and date of birth) in your physical possession and readily accessible, and present them on request to the FAA, the NTSB, the TSA, or any federal, state or local law enforcement officer.",
+    "expected_sections": [
+      "107.7"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q66",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "how long is the temporary remote pilot certificate good for?",
+    "expected_answer": "Up to 120 calendar days. It expires on the date shown on it, when you receive the permanent certificate, or when you get notice that the certificate was denied or revoked, whichever comes first.",
+    "expected_sections": [
+      "107.64"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q67",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "What happens if somebody gets caught cheating on the Part 107 knowledge test?",
+    "expected_answer": "For 1 year after the act they may not apply for any certificate, rating or authorization under 14 CFR chapter I, or apply for and take any test, and any certificate or rating they hold may be suspended or revoked.",
+    "expected_sections": [
+      "107.69"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q68",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "I'm a private pilot doing the online course instead of the test. Does it cover night flying?",
+    "expected_answer": "Yes. Operation at night is one of the subject areas of the training for Part 61 certificate holders, alongside regulations, weather effects, loading, emergency procedures, CRM, performance, and maintenance and preflight inspection.",
+    "expected_sections": [
+      "107.74"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q69",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "I just got married and changed my last name. How do I update my remote pilot certificate?",
+    "expected_answer": "Apply for a change of name and include your current remote pilot certificate plus a copy of the marriage license, court order or other document verifying the change. The documents are returned after inspection.",
+    "expected_sections": [
+      "107.77"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q70",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "can i voluntarily give up my remote pilot certificate?",
+    "expected_answer": "Yes. You may voluntarily surrender it for cancellation with a signed statement beginning \"I voluntarily surrender my remote pilot certificate with a small UAS rating for cancellation.\" It will not be reissued unless you again meet 107.61 and 107.63.",
+    "expected_sections": [
+      "107.79"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q71",
+    "topic": "Remote ID",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "What's a FRIA?",
+    "expected_answer": "An FAA-recognized identification area: a defined geographic area where unmanned aircraft without remote identification may be flown, within visual line of sight.",
+    "expected_sections": [
+      "89.1",
+      "89.115"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q72",
+    "topic": "Remote ID",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "can i just switch off remote ID once im in the air?",
+    "expected_answer": "No. A standard remote ID drone must broadcast the required message elements from takeoff to shutdown, its remote ID equipment may not be disabled, and if it stops broadcasting you must land as soon as practicable.",
+    "expected_sections": [
+      "89.110"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q73",
+    "topic": "Remote ID",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "If I'm using a remote ID broadcast module, can I fly beyond visual line of sight?",
+    "expected_answer": "No. With a broadcast module, the person manipulating the controls must be able to see the aircraft at all times.",
+    "expected_sections": [
+      "89.115"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q74",
+    "topic": "Preflight and weather",
+    "difficulty": "Easy",
+    "question_type": "Scenario",
+    "question": "Halfway through a job my motor starts grinding. Can I finish the last few photos?",
+    "expected_answer": "No. You may not continue a flight when you know or have reason to know the small UAS is no longer in a condition for safe operation. Stop the operation.",
+    "expected_sections": [
+      "107.15"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q75",
+    "topic": "Medical",
+    "difficulty": "Easy",
+    "question_type": "Scenario",
+    "question": "I took cold medicine that makes me drowsy. Can I still fly this afternoon?",
+    "expected_answer": "No, if you know or have reason to know it would interfere with safe operation. Part 107 bars flying with a physical or mental condition that would interfere with safety, and 91.17 (via 107.27) bars flying while using a drug that affects your faculties contrary to safety.",
+    "expected_sections": [
+      "91.17",
+      "107.17",
+      "107.27"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q76",
+    "topic": "Operating limits",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "What exactly do I have to be able to see to be keeping visual line of sight?",
+    "expected_answer": "With unaided vision (corrective lenses allowed) you must be able to see the aircraft well enough to know its location, determine its attitude, altitude and direction of flight, observe the airspace for other traffic or hazards, and determine that it does not endanger anyone's life or property.",
+    "expected_sections": [
+      "107.31"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q77",
+    "topic": "Preflight and weather",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Do I actually have to brief my VO before we fly?",
+    "expected_answer": "Yes. Before flight the RPIC must ensure everyone directly participating is informed about the operating conditions, emergency procedures, contingency procedures, roles and responsibilities, and potential hazards.",
+    "expected_sections": [
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q78",
+    "topic": "Preflight and weather",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Any rule about bolting a camera or speaker onto my drone?",
+    "expected_answer": "Yes. Before flight, ensure any object attached or carried is secure and does not adversely affect the flight characteristics or controllability of the aircraft.",
+    "expected_sections": [
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q79",
+    "topic": "Preflight and weather",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Do I have to check the battery level before every flight?",
+    "expected_answer": "Yes. Before flight the RPIC must ensure there is enough power for the small UAS to operate for the intended operational time.",
+    "expected_sections": [
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q80",
+    "topic": "Emergencies",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "If I break a rule during an in-flight emergency do I have to write it up for the FAA?",
+    "expected_answer": "Only if asked. You may deviate from Part 107 to the extent needed to respond to the emergency, and must send a written report to the FAA upon request.",
+    "expected_sections": [
+      "107.21"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q81",
+    "topic": "Drugs and alcohol",
+    "difficulty": "Easy",
+    "question_type": "Scenario",
+    "question": "Had beers at a wedding, last one at 1 am. Job starts at 8 am. OK to fly?",
+    "expected_answer": "No. That is only 7 hours. You may not act as a crewmember within 8 hours after consuming any alcohol (and never while under the influence or at 0.04 BAC or higher).",
+    "expected_sections": [
+      "91.17",
+      "107.27"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q82",
+    "topic": "Operations over people",
+    "difficulty": "Easy",
+    "question_type": "Scenario",
+    "question": "Can I fly over a guy who's sitting in his parked truck?",
+    "expected_answer": "Yes. Flying over a person located inside a stationary vehicle that can provide reasonable protection from a falling small unmanned aircraft is allowed without a Category 1-4 standard.",
+    "expected_sections": [
+      "107.39"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q83",
+    "topic": "Waivers",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Is the cloud clearance rule something I can get waived?",
+    "expected_answer": "Yes. Section 107.51 (operating limitations, including distance from clouds) is on the list of waivable rules.",
+    "expected_sections": [
+      "107.205"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q84",
+    "topic": "Waivers",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Can I get a waiver so I don't have to report accidents?",
+    "expected_answer": "No. Accident reporting (107.9) is not on the list of rules that can be waived.",
+    "expected_sections": [
+      "107.9",
+      "107.205"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q85",
+    "topic": "Registration",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "Does my drone need to be registered if I'm flying it for my Part 107 business?",
+    "expected_answer": "Yes. A small unmanned aircraft flown under Part 107 must be registered (Part 47 or Part 48); the small-drone weight exemption covers only aircraft flown exclusively under the recreational exception.",
+    "expected_sections": [
+      "48.15",
+      "107.13"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q86",
+    "topic": "Flight review (Part 61)",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "what does a flight review involve for regular pilots?",
+    "expected_answer": "At least 1 hour of flight training and 1 hour of ground training, covering a review of the current general operating and flight rules of Part 91 and the maneuvers and procedures the instructor decides are needed.",
+    "expected_sections": [
+      "61.56"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q87",
+    "topic": "Flight review (Part 61)",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "How often does a manned pilot need a flight review?",
+    "expected_answer": "Within the preceding 24 calendar months before acting as pilot in command.",
+    "expected_sections": [
+      "61.56"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q88",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "what topics are on the initial 107 knowledge test?",
+    "expected_answer": "Topics include Part 107 regulations, airspace classification and flight restrictions, aviation weather sources and effects, small UAS loading and performance, emergency procedures, crew resource management, radio communication procedures, physiological effects of drugs and alcohol, aeronautical decision-making and judgment, airport operations, maintenance and preflight inspection, and operation at night.",
+    "expected_sections": [
+      "107.73"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q89",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "What are the three reasons the FAA puts up a TFR for a disaster or hazard?",
+    "expected_answer": "To protect persons and property in the air or on the surface from an existing or imminent hazard; to provide a safe environment for disaster relief aircraft; and to prevent unsafe congestion of sightseeing and other aircraft above an incident or event that generates high public interest.",
+    "expected_sections": [
+      "91.137"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q90",
+    "topic": "Certification and training",
+    "difficulty": "Easy",
+    "question_type": "Lookup",
+    "question": "what ID do i need to bring to take the knowledge test?",
+    "expected_answer": "Identification containing your photograph, signature, date of birth (showing you meet or will meet the age requirement before the test report expires), and permanent mailing address. If that address is a P.O. box, you also need a current residential address.",
+    "expected_sections": [
+      "107.67"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q91",
+    "topic": "Night operations",
     "difficulty": "Medium",
     "question_type": "Scenario",
-    "question": "There's a small uncontrolled airport 1 mile away in Class G airspace. Can I fly near it without authorization?",
-    "expected_answer": "No ATC authorization is needed in Class G, but the flight may not interfere with operations and traffic patterns at the airport.",
+    "question": "Sunrise is 6:52 tomorrow. Can I launch at 6:30 with no strobe on the drone?",
+    "expected_answer": "No. 6:30 is within morning civil twilight (the half hour before official sunrise, outside Alaska). Flying during civil twilight requires anti-collision lighting visible for at least 3 statute miles.",
     "expected_sections": [
-      "107.41",
-      "107.43"
+      "107.29"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q16",
+    "id": "Q92",
     "topic": "Airspace and LAANC",
     "difficulty": "Medium",
     "question_type": "Lookup",
-    "question": "How does Part 107 handle temporary flight restrictions (TFRs)?",
-    "expected_answer": "The RPIC must comply with the restrictions in 14 CFR 91.137 through 91.145 and 99.7 (flight restrictions in NOTAM-designated areas).",
+    "question": "Do I need ATC authorization to fly in Class E airspace?",
+    "expected_answer": "Only in Class E airspace within the lateral boundaries of the surface area designated for an airport. Other Class E airspace does not require authorization under 107.41.",
     "expected_sections": [
-      "107.47"
+      "107.41"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q17",
-    "topic": "Waivers",
+    "id": "Q93",
+    "topic": "Drugs and alcohol",
     "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "Can I get a waiver to fly beyond visual line of sight?",
-    "expected_answer": "Yes, 107.31 is waivable, except that no waiver allows carrying another person's property for compensation or hire beyond VLOS.",
+    "question_type": "Scenario",
+    "question": "I got convicted on a state marijuana possession charge. Does that affect my remote pilot certificate?",
+    "expected_answer": "It can. A conviction for violating any federal or state statute relating to marijuana or other drugs is grounds for denial of an application for up to 1 year after the final conviction, or for suspension or revocation of a certificate.",
     "expected_sections": [
-      "107.205"
+      "107.57"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q18",
-    "topic": "Waivers",
+    "id": "Q94",
+    "topic": "Drugs and alcohol",
     "difficulty": "Medium",
     "question_type": "Lookup",
-    "question": "Which Part 107 rules can be waived?",
-    "expected_answer": "107.25 (moving vehicle/aircraft), 107.29(a)(2) and (b) (anti-collision lighting), 107.31 (VLOS), 107.33 (VO), 107.35 (multiple aircraft), 107.37(a) (yield right of way), 107.39 (over people), 107.41 (controlled airspace), 107.51 (operating limitations) and 107.145 (moving vehicles).",
+    "question": "If the FAA finds I flew drunk but I never got convicted of anything, can they still touch my certificate?",
+    "expected_answer": "Yes. Committing an act prohibited by 91.17(a) or 91.19(a) is itself grounds for denying an application for 1 year after the date of the act, or for suspending or revoking a certificate. No conviction is needed.",
     "expected_sections": [
-      "107.205"
+      "107.57"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q19",
-    "topic": "Waivers",
+    "id": "Q95",
+    "topic": "Drugs and alcohol",
     "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "Can I get a waiver to fly within 8 hours of drinking alcohol?",
-    "expected_answer": "No. 107.27 (alcohol and drugs) is not on the waivable list.",
+    "question_type": "Scenario",
+    "question": "Weed is legal in my state. Can I fly a commercial job after smoking if I feel fine?",
+    "expected_answer": "No. Under 107.27 you must comply with 91.17(a), which bars acting as a crewmember while using any drug that affects your faculties in any way contrary to safety. State legalization does not change the federal rule, and drug offenses can also cost you the certificate under 107.57.",
     "expected_sections": [
+      "91.17",
       "107.27",
+      "107.57"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q96",
+    "topic": "Drugs and alcohol",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Can law enforcement make me take a blood alcohol test after a drone flight?",
+    "expected_answer": "Yes. If an officer authorized under state or local law asks while investigating a suspected violation of a similar state or local law, you must submit to the test. Refusal is grounds for denial of an application for up to 1 year, or suspension or revocation.",
+    "expected_sections": [
+      "91.17",
+      "107.27",
+      "107.59"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q97",
+    "topic": "Operations over people",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "What is a declaration of compliance for Category 2 or 3 drones?",
+    "expected_answer": "A declaration a manufacturer (applicant) submits to the FAA showing a drone meets the Category 2 or 3 requirements using an FAA-accepted means of compliance. It lists the make, model, serial numbers and means of compliance. Category 2 and 3 operations require a drone listed on an FAA-accepted declaration.",
+    "expected_sections": [
+      "107.115",
+      "107.155",
+      "107.160"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q98",
+    "topic": "Operations over people",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "What do you need to fly a Category 4 drone over people?",
+    "expected_answer": "The drone must have an airworthiness certificate issued under Part 21, be operated within the limitations in its approved Flight Manual (which must not prohibit operations over people), and be maintained under 107.140(c), with records kept. Sustained flight over open-air assemblies also requires Remote ID compliance.",
+    "expected_sections": [
+      "107.140"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q99",
+    "topic": "Operations over people",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Filming a closed movie set. Everybody on site knows the drone may fly over them. Can my Category 3 drone fly over the cast?",
+    "expected_answer": "Yes, if the operation is within or over a closed- or restricted-access site and everyone inside it is on notice that the drone may fly over them. Category 3 still prohibits sustained flight over open-air assemblies.",
+    "expected_sections": [
+      "107.125"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q100",
+    "topic": "Operations over people",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "My Category 3 drone is inspecting a fenced construction site but there's a public sidewalk next to it. Can I cross over the sidewalk?",
+    "expected_answer": "Only in transit. Outside a closed- or restricted-access site, a Category 3 operation may not maintain sustained flight over any person who is not directly participating, unless that person is under a covered structure or inside a stationary vehicle.",
+    "expected_sections": [
+      "107.125"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q101",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Multi-step",
+    "question": "What's the difference between a standard remote ID drone and using a broadcast module?",
+    "expected_answer": "A standard remote ID drone has remote ID built in by the manufacturer and broadcasts the control station's location. A broadcast module is an add-on attached to a drone without built-in remote ID; it broadcasts the takeoff location instead of the control station location, and a drone using one must stay within visual line of sight.",
+    "expected_sections": [
+      "89.110",
+      "89.115",
+      "89.305",
+      "89.320"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q102",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "What info does a standard remote ID drone broadcast?",
+    "expected_answer": "The UA identification (serial number or session ID), latitude/longitude and geometric altitude of the control station, latitude/longitude and geometric altitude of the aircraft, velocity of the aircraft, a time mark, and an emergency status indication.",
+    "expected_sections": [
+      "89.305"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q103",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Does a remote ID broadcast module send out where I'm standing?",
+    "expected_answer": "No. A broadcast module determines and broadcasts the takeoff location instead of the control station location, along with the aircraft's position, altitude and velocity, a time mark, and the module's serial number.",
+    "expected_sections": [
+      "89.315",
+      "89.320"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q104",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "How long does a FRIA last once the FAA approves it?",
+    "expected_answer": "48 calendar months after the FAA approves it. To renew, the sponsor must request renewal no later than 120 days before it expires; otherwise it expires automatically.",
+    "expected_sections": [
+      "89.225",
+      "89.230"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q105",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Who can apply to set up a FRIA?",
+    "expected_answer": "Only FAA-recognized community-based organizations and educational institutions (including primary and secondary schools, trade schools, colleges and universities).",
+    "expected_sections": [
+      "89.205"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q106",
+    "topic": "Registration",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "My mini drone weighs 0.4 lb and I only fly it for fun at the park. Do I have to register it?",
+    "expected_answer": "No. A small unmanned aircraft flown exclusively under the recreational exception (49 U.S.C. 44809) that weighs 0.55 pounds or less is not required to be registered. If you ever fly it under Part 107, it must be registered.",
+    "expected_sections": [
+      "48.15"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q107",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "My drone is under 250 grams and I use it for paid Part 107 jobs. Does it need remote ID?",
+    "expected_answer": "Yes. Part 107 aircraft must be registered regardless of weight, and Part 89 applies to unmanned aircraft that are registered or required to be registered. The under-250 g exemption only helps recreational drones that don't need registration.",
+    "expected_sections": [
+      "48.15",
+      "89.101",
+      "107.13"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q108",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Multi-step",
+    "question": "I'm a private pilot and my flight review is current. How do I stay current on my 107 after I get it?",
+    "expected_answer": "Within the previous 24 calendar months you need one of: passing the initial knowledge test, completing recurrent training, or (as a Part 61 certificate holder meeting the 61.56 flight review requirement) completing the training described in 107.74.",
+    "expected_sections": [
+      "107.65"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q109",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "I only have a student pilot certificate. Can I take the shorter online course route to my 107 instead of the test?",
+    "expected_answer": "No. The Part 61 route requires holding a pilot certificate other than a student pilot certificate plus a current flight review under 61.56. A student pilot must pass the initial aeronautical knowledge test.",
+    "expected_sections": [
+      "107.61"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q110",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "I'm a private pilot, but my last flight review was 26 months ago. Can I still use the Part 61 route for my drone certificate?",
+    "expected_answer": "Not until you get a current flight review. The Part 61 route requires meeting the 61.56 flight review requirement (within the preceding 24 calendar months). Otherwise you would pass the initial knowledge test.",
+    "expected_sections": [
+      "61.56",
+      "107.61"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q111",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Multi-step",
+    "question": "After I pass the 107 test, what do I actually do to get the certificate?",
+    "expected_answer": "Apply in a form and manner acceptable to the FAA (AC 107-2A: FAA Form 8710-13 through IACRA), including your knowledge test report. TSA vets the application, and a temporary certificate valid up to 120 calendar days can be issued before the permanent one arrives.",
+    "expected_sections": [
+      "107.63",
+      "107.64"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q112",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "What score do I need to pass the Part 107 knowledge test?",
+    "expected_answer": "The regulation says only that the minimum passing grade is specified by the Administrator. (FAA testing guidance uses 70 percent, but that number is not in Part 107.)",
+    "expected_sections": [
+      "107.67"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q113",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Is night flying covered in the recurrent training now?",
+    "expected_answer": "Yes. Operation at night is one of the subject areas for both the initial knowledge test and recurrent training.",
+    "expected_sections": [
+      "107.73"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q114",
+    "topic": "Night operations",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "I passed my initial test in 2019 and did the free online recurrent training in May 2025. Can I fly at night now?",
+    "expected_answer": "Yes. Training completed under 107.65 after April 6, 2021 satisfies the night knowledge requirement, and May 2025 training keeps you current through May 2027. You still need lighted anti-collision lighting visible for at least 3 statute miles.",
+    "expected_sections": [
+      "107.29",
+      "107.65"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q115",
+    "topic": "Moving vehicles",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Can I fly my drone off the back of a boat while it's moving, filming a sailing race on the open lake?",
+    "expected_answer": "Yes, if the drone is flown over a sparsely populated area and is not transporting another person's property for compensation or hire. Operation from a moving water-borne vehicle is otherwise prohibited.",
+    "expected_sections": [
+      "107.25"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q116",
+    "topic": "Waivers",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Can I get a waiver to fly from a moving car in a city?",
+    "expected_answer": "Yes. 107.25 is waivable, so you can apply for a certificate of waiver showing the operation can be done safely. A 107.25 waiver cannot authorize carrying another person's property for compensation or hire.",
+    "expected_sections": [
+      "107.200",
       "107.205"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q20",
+    "id": "Q117",
     "topic": "Waivers",
-    "difficulty": "Easy",
+    "difficulty": "Medium",
     "question_type": "Lookup",
-    "question": "What has to be in a waiver application?",
-    "expected_answer": "A complete description of the proposed operation and a justification, including supporting data and documentation as needed, that the operation can be safely conducted under the waiver.",
+    "question": "Can I get a waiver for the night training requirement?",
+    "expected_answer": "No. The anti-collision lighting rules (107.29(a)(2) and (b)) can be waived, but the night knowledge/training requirement in 107.29(a)(1) is not on the waiver list.",
+    "expected_sections": [
+      "107.29",
+      "107.205"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q118",
+    "topic": "Waivers",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "What does the FAA need to see before it grants a waiver?",
+    "expected_answer": "That the operation can be safely conducted under the terms of the certificate of waiver. The request must include a complete description of the proposed operation and a justification establishing that it can be done safely. The FAA can add limitations.",
     "expected_sections": [
       "107.200"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q21",
-    "topic": "Certification and training",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "How old do I have to be to get a remote pilot certificate?",
-    "expected_answer": "At least 16 years old.",
-    "expected_sections": [
-      "107.61"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q22",
-    "topic": "Certification and training",
-    "difficulty": "Medium",
-    "question_type": "Multi-step",
-    "question": "What are all the eligibility requirements for a remote pilot certificate?",
-    "expected_answer": "Be at least 16; read, speak, write and understand English (with medical exceptions and limitations); have no known physical or mental condition that would interfere with safe operation; and show aeronautical knowledge by passing the initial knowledge test, or, for a Part 61 certificate holder (not student) with a current 61.56 flight review, completing the 107.74 training.",
-    "expected_sections": [
-      "107.61"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q23",
-    "topic": "Certification and training",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "How often do I need recurrent training?",
-    "expected_answer": "To act as RPIC, within the previous 24 calendar months you must have passed an initial knowledge test, completed recurrent training, or (Part 61 pilots) completed the 107.74 training.",
-    "expected_sections": [
-      "107.65"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q24",
-    "topic": "Certification and training",
+    "id": "Q119",
+    "topic": "Crew roles",
     "difficulty": "Medium",
     "question_type": "Scenario",
-    "question": "I passed my knowledge test in June 2023 and haven't done any training since. Can I fly commercially in December 2025?",
-    "expected_answer": "No. More than 24 calendar months have passed, so you must complete recurrent training (or pass a test) before acting as RPIC. The certificate itself does not expire.",
+    "question": "Can my buddy whose remote pilot certificate got suspended still work as my visual observer?",
+    "expected_answer": "Yes. Part 107 does not require a visual observer to hold a remote pilot certificate. The VO still must meet the medical and alcohol/drug rules and coordinate with the RPIC.",
+    "expected_sections": [
+      "107.17",
+      "107.27",
+      "107.33"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q120",
+    "topic": "Crew roles",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Can we swap who is remote pilot in command partway through a flight?",
+    "expected_answer": "Yes. A remote pilot in command must be designated before or during the flight, so the designation can change, but there must be an RPIC at all times and the new RPIC must hold a certificate and be able to direct the aircraft to comply.",
+    "expected_sections": [
+      "107.12",
+      "107.19"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q121",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "There's a TFR over a wildfire near me. Can I fly my drone inside it if I stay low?",
+    "expected_answer": "Not without authorization. Part 107 requires compliance with NOTAM flight restrictions under 91.137. Inside a disaster/hazard TFR only listed aircraft may operate, such as those participating in relief activities under the direction of the official in charge.",
+    "expected_sections": [
+      "91.137",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q122",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Is it illegal to fly near the president when he's in town?",
+    "expected_answer": "It is illegal to fly in the airspace restricted by a NOTAM issued for the President, Vice President or other public figures. Part 107 requires compliance with 91.141.",
+    "expected_sections": [
+      "91.141",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q123",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "There's a rocket launch nearby next week. Does that restrict drones?",
+    "expected_answer": "It can. The FAA can issue a NOTAM designating a space flight operations area, and no one may operate in it except with ATC authorization. Part 107 requires compliance.",
+    "expected_sections": [
+      "91.143",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q124",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "airshow at the county airport this weekend, any special drone rules?",
+    "expected_answer": "Possibly. For aerial demonstrations the FAA can issue a NOTAM TFR, normally 5 NM in radius, and no one may operate inside it except as the NOTAM allows or with ATC or event waiver authorization. Check NOTAMs, and don't interfere with airport traffic.",
+    "expected_sections": [
+      "91.145",
+      "107.43",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q125",
+    "topic": "Airspace and LAANC",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "There's a hospital helipad half a mile from the house I'm shooting, all Class G. Any rules for that?",
+    "expected_answer": "No ATC authorization is needed in Class G, but you may not operate in a way that interferes with operations and traffic patterns at any airport, heliport or seaplane base, and you must yield right of way to the helicopter.",
+    "expected_sections": [
+      "107.37",
+      "107.43"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q126",
+    "topic": "Preflight and weather",
+    "difficulty": "Medium",
+    "question_type": "Multi-step",
+    "question": "What does the 107 preflight assessment of the operating environment cover?",
+    "expected_answer": "Local weather conditions, local airspace and any flight restrictions, the location of persons and property on the surface, and other ground hazards.",
+    "expected_sections": [
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q127",
+    "topic": "Preflight and weather",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Do I have to check the control link before flying?",
+    "expected_answer": "Yes. Before flight the RPIC must ensure all control links between the ground control station and the small unmanned aircraft are working properly.",
+    "expected_sections": [
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q128",
+    "topic": "Accident reporting",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "How do I actually submit a drone accident report?",
+    "expected_answer": "Part 107 says report to the FAA within 10 calendar days in a manner acceptable to the Administrator. AC 107-2A says the report may go to the FAA Regional Operations Center electronically (via faa.gov/uas) or by telephone, or to the responsible FSDO.",
+    "expected_sections": [
+      "107.9"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q129",
+    "topic": "Certification and training",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Is the recurrent training free and where do I take it?",
+    "expected_answer": "It is an online course from the FAA Safety Team (FAASTeam) at faasafety.gov, and it is free.",
     "expected_sections": [
       "107.65"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q25",
-    "topic": "Certification and training",
-    "difficulty": "Easy",
+    "id": "Q130",
+    "topic": "Operations over people",
+    "difficulty": "Medium",
     "question_type": "Lookup",
-    "question": "If I fail the knowledge test, when can I retake it?",
-    "expected_answer": "After 14 calendar days from the failure.",
+    "question": "What happens to my Category 2 eligibility if the FAA rescinds the manufacturer's declaration of compliance?",
+    "expected_answer": "The drone is no longer eligible for Category 2 operations over people. Category 2 operations require a drone listed on an FAA-accepted declaration of compliance.",
     "expected_sections": [
-      "107.71"
+      "107.115",
+      "107.160"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q26",
+    "id": "Q131",
+    "topic": "Operating limits",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "My drone's controller shows 95 mph groundspeed with a tailwind. Am I legal?",
+    "expected_answer": "Yes, 95 mph is under the 100 mph (87 knot) groundspeed limit. The limit is on groundspeed, so a tailwind counts.",
+    "expected_sections": [
+      "107.51"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q132",
+    "topic": "Operating limits",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Cloud deck is at 800 feet. How high can I fly?",
+    "expected_answer": "No higher than 300 feet AGL, because you must stay at least 500 feet below the cloud.",
+    "expected_sections": [
+      "107.51"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q133",
+    "topic": "Operating limits",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Haze is bad, I can see about 2 miles. Can I still fly if I keep it close?",
+    "expected_answer": "No. Flight visibility from the control station must be at least 3 statute miles, regardless of how close you keep the drone (unless waived).",
+    "expected_sections": [
+      "107.51"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q134",
+    "topic": "Applicability",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "My drone has an airworthiness certificate and I'm flying it under Part 91. Does Part 107 still apply?",
+    "expected_answer": "No. Part 107 does not apply to an operation conducted under Part 91 with a small UAS that has been issued an airworthiness certificate. (The other exclusions are air carrier operations, aircraft subject to 49 U.S.C. 44809, and operations under a section 333 or 44807 exemption.)",
+    "expected_sections": [
+      "107.1"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q135",
+    "topic": "Remote ID",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "Before takeoff, my drone app says Remote ID failed self-test. Can I fly anyway?",
+    "expected_answer": "No. A standard remote ID drone tests remote ID before takeoff and must not be able to take off if remote ID is not functional. Its remote ID equipment must be functional from takeoff to shutdown.",
+    "expected_sections": [
+      "89.110",
+      "89.310"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q136",
+    "topic": "Flight review (Part 61)",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "I passed my instrument rating checkride last year. Do I still need a separate flight review to use the Part 61 route for my drone cert?",
+    "expected_answer": "No. A pilot who passed a practical test for a certificate or rating within the preceding 24 calendar months does not need a separate flight review.",
+    "expected_sections": [
+      "61.56",
+      "107.61"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q137",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "Are TFRs only for aircraft with people in them, or do they apply to drones too?",
+    "expected_answer": "They apply to drones. Part 107 requires compliance with NOTAM restrictions under 91.137 through 91.145 and 99.7.",
+    "expected_sections": [
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q138",
+    "topic": "Operating limits",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "I want to fly at 350 feet over an empty field next to a 300-foot building that's 1,000 feet away. Legal?",
+    "expected_answer": "Yes. 350 feet AGL is under the 400-foot limit, so the structure exception isn't needed. (Above 400 feet would require staying within 400 feet of the structure.)",
+    "expected_sections": [
+      "107.51"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q139",
+    "topic": "Hazardous operations",
+    "difficulty": "Medium",
+    "question_type": "Scenario",
+    "question": "A client wants me to tow a banner with my drone over a beach. Anything in Part 107 about that?",
+    "expected_answer": "Part 107 has no specific banner rule, but the load must be secure and not affect controllability (107.49(e)), the drone must weigh under 55 pounds including the banner, you can't fly over people on the beach without meeting 107.39, and you can't fly recklessly.",
+    "expected_sections": [
+      "107.3",
+      "107.23",
+      "107.39",
+      "107.49"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q140",
     "topic": "Certification and training",
     "difficulty": "Medium",
+    "question_type": "Lookup",
+    "question": "I moved and didn't tell the FAA for 2 months. Can I still fly?",
+    "expected_answer": "You were required to report a change of permanent mailing address to the FAA within 30 days, by letter to the Airman Certification Branch or through the FAA web portal. Notify the FAA now; flying with an unreported address is out of compliance.",
+    "expected_sections": [
+      "107.77"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q141",
+    "topic": "Operations over people",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "My Category 2 drone has standard remote ID. Can I hover over the crowd at a street festival?",
+    "expected_answer": "Yes, if the drone is Category 2 eligible (listed on an FAA-accepted declaration of compliance and labeled). Sustained flight over an open-air assembly is allowed in Category 2 only when the operation meets 89.110 (standard remote ID) or 89.115(a) (broadcast module).",
+    "expected_sections": [
+      "89.110",
+      "107.115"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q142",
+    "topic": "Operations over people",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Shooting a wedding with a 0.6 lb drone that has prop guards. Can I hover over the guests?",
+    "expected_answer": "Not under Category 1: it is over 0.55 pounds, and prop guards don't change that. It would need to be eligible for Category 2 or 3 (an accepted declaration of compliance) or the guests would need to be directly participating, under a covered structure, or in a stationary vehicle.",
+    "expected_sections": [
+      "107.39",
+      "107.110",
+      "107.115",
+      "107.125"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q143",
+    "topic": "Operations over people",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "My 240 gram drone has exposed propellers. Is it Category 1 so I can fly over people?",
+    "expected_answer": "Weight alone isn't enough. Category 1 also requires no exposed rotating parts that would lacerate human skin. If the exposed props could lacerate skin, it is not eligible for Category 1.",
+    "expected_sections": [
+      "107.110"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q144",
+    "topic": "Moving vehicles",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Real estate shoot in a gated subdivision. Can I fly from a moving golf cart following the agent's car?",
+    "expected_answer": "Probably not. From a moving land vehicle you may fly only over a sparsely populated area, which a subdivision likely is not. Flying over the agent inside a moving car also requires a Category 1-4 drone and either a closed- or restricted-access site with notice, or no sustained flight over the car.",
+    "expected_sections": [
+      "107.25",
+      "107.145"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q145",
+    "topic": "Moving vehicles",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Farmer wants me to drop his cover crop seed from my drone while I drive his pickup down the field road. Ok?",
+    "expected_answer": "No. From a moving land vehicle the drone may not be transporting another person's property for compensation or hire, and the seed is the farmer's property. Dropping objects is otherwise allowed only without undue hazard.",
+    "expected_sections": [
+      "107.23",
+      "107.25"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q146",
+    "topic": "Night operations",
+    "difficulty": "Hard",
     "question_type": "Multi-step",
-    "question": "I'm already a private pilot under Part 61. How do I get my remote pilot certificate?",
-    "expected_answer": "With a current flight review under 61.56, complete the 107.74 training course instead of the knowledge test, then apply through a FSDO, designated pilot examiner, airman certification representative of a pilot school, CFI, or other FAA-authorized person, who verifies your identity and flight review.",
+    "question": "Night inspection of a cell tower inside Class D airspace at 300 feet. What do I need?",
+    "expected_answer": "Three things: a current remote pilot certificate with the post-April 6, 2021 knowledge or training that covers night operation; anti-collision lighting visible for at least 3 statute miles; and prior ATC authorization for Class D. 300 feet AGL is within the altitude limit.",
+    "expected_sections": [
+      "107.29",
+      "107.41",
+      "107.51",
+      "107.65"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q147",
+    "topic": "Night operations",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "I've been 107 certified since 2018 and my last training was the old recurrent test in 2020. Can I fly at night?",
+    "expected_answer": "No. Your 2020 recurrent is more than 24 calendar months old, so you're not current under 107.65 at all, and it predates April 6, 2021, so it doesn't satisfy the night requirement either. Complete the current recurrent training.",
+    "expected_sections": [
+      "107.29",
+      "107.65"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q148",
+    "topic": "Certification and training",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "I'm a private pilot with a current flight review but my medical expired. Can I use the Part 61 route for my 107?",
+    "expected_answer": "Yes. The Part 61 route requires a pilot certificate (other than student pilot) and a current flight review, not a medical certificate. Part 107 has no medical certificate requirement, but you must not know of a condition that would interfere with safe operation.",
+    "expected_sections": [
+      "107.17",
+      "107.61"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q149",
+    "topic": "Certification and training",
+    "difficulty": "Hard",
+    "question_type": "Multi-step",
+    "question": "As a Part 61 pilot using the online course, what do I have to show and to whom to get the 107?",
+    "expected_answer": "Present your Part 61 pilot certificate, logbook or other record showing a flight review within the previous 24 calendar months, and the certificate of completion for the initial training course to an FSDO, a designated pilot examiner, an airman certification representative, a certificated flight instructor, or another person authorized by the Administrator.",
     "expected_sections": [
       "107.61",
       "107.63",
@@ -324,299 +1245,591 @@
     "should_refuse": false
   },
   {
-    "id": "Q27",
-    "topic": "Certification and training",
-    "difficulty": "Medium",
+    "id": "Q150",
+    "topic": "Remote ID",
+    "difficulty": "Hard",
     "question_type": "Lookup",
-    "question": "I moved. Do I have to tell the FAA?",
-    "expected_answer": "Yes. After 30 days from the address change you may not exercise remote pilot privileges unless you have notified the FAA (by letter to the Airman Certification Branch or online).",
+    "question": "How accurate does a standard remote ID drone's position report have to be?",
+    "expected_answer": "Aircraft and control station position within 100 feet of true position (95 percent probability); control station geometric altitude within 15 feet; aircraft geometric altitude within 150 feet (each 95 percent). Position and altitude must be broadcast within 1.0 second of measurement.",
     "expected_sections": [
-      "107.77"
+      "89.310"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q28",
-    "topic": "Certification and training",
-    "difficulty": "Medium",
+    "id": "Q151",
+    "topic": "Remote ID",
+    "difficulty": "Hard",
     "question_type": "Lookup",
-    "question": "Can someone without a remote pilot certificate fly the drone?",
-    "expected_answer": "Yes, if they are under the direct supervision of a certificated RPIC who has the ability to immediately take direct control of the aircraft.",
+    "question": "How often does a remote ID drone have to transmit?",
+    "expected_answer": "Message elements must be broadcast at a rate of at least 1 message per second.",
     "expected_sections": [
-      "107.12"
+      "89.310",
+      "89.320"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q29",
-    "topic": "Certification and training",
-    "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "Do I need an FAA medical certificate to fly under Part 107?",
-    "expected_answer": "No. Part 107 requires no medical certificate, but you may not fly if you know or have reason to know of a physical or mental condition that would interfere with safe operation.",
-    "expected_sections": [
-      "107.17",
-      "107.61"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q30",
-    "topic": "Operations over people",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "When can I fly over people without meeting a Category 1-4 standard?",
-    "expected_answer": "When the person is directly participating in the operation, or is under a covered structure or inside a stationary vehicle that can reasonably protect them from a falling drone.",
-    "expected_sections": [
-      "107.39"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q31",
-    "topic": "Operations over people",
-    "difficulty": "Medium",
-    "question_type": "Multi-step",
-    "question": "What makes a drone eligible for Category 1 operations over people?",
-    "expected_answer": "It weighs 0.55 pounds or less on takeoff and throughout the flight, including everything attached, and has no exposed rotating parts that would lacerate skin. It also may not do sustained flight over open-air assemblies unless it meets the Remote ID rules in 89.110 or 89.115(a).",
-    "expected_sections": [
-      "107.110"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q32",
-    "topic": "Operations over people",
-    "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "What is the difference between Category 2 and Category 3 drones?",
-    "expected_answer": "Category 2 must not cause injury equal to or worse than a transfer of 11 ft-lb of kinetic energy from a rigid object; Category 3 uses 25 ft-lb. Both need an FAA-accepted declaration of compliance and labeling. Category 3 may not fly over open-air assemblies and may overfly people only in a closed/restricted-access site with notice, or without sustained flight over people.",
-    "expected_sections": [
-      "107.115",
-      "107.120",
-      "107.125",
-      "107.130"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q33",
-    "topic": "Operations over people",
+    "id": "Q152",
+    "topic": "Remote ID",
     "difficulty": "Hard",
     "question_type": "Scenario",
-    "question": "I have a Category 3 drone. Can I film over the crowd at an outdoor concert?",
-    "expected_answer": "No. Category 3 operations may not be conducted over open-air assemblies of human beings. A waiver of 107.39 or a different category would be needed.",
+    "question": "Our flying club runs a FRIA. Can a Part 107 pilot do a paid job there with an old drone that has no remote ID?",
+    "expected_answer": "Yes, as far as Remote ID goes. 89.115(b) lets a person fly an aircraft without remote ID if the aircraft and the pilot stay within the FRIA's boundaries and the pilot can see the aircraft at all times; it is not limited to recreational flyers. All other Part 107 rules still apply.",
     "expected_sections": [
-      "107.125",
+      "89.115"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q153",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "News station wants me to fly my drone inside the TFR over a big apartment fire for live coverage. Is there a media exception?",
+    "expected_answer": "Not for this kind of TFR. A TFR protecting people from a surface hazard (91.137(a)(1)) allows only aircraft participating in hazard relief under the on-scene official. The news-media exception exists only for (a)(2) disaster-relief and (a)(3) high-public-interest TFRs, and requires a flight plan filed before entering. Part 107 requires compliance.",
+    "expected_sections": [
+      "91.137",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q154",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Hard",
+    "question_type": "Lookup",
+    "question": "What is the high barometric pressure TFR rule and does it affect drones?",
+    "expected_answer": "When barometric pressure exceeds 31.00 inches of mercury, the FAA may issue a NOTAM restricting flight operations (mainly for aircraft that can't set altimeters that high). Part 107 operators must comply with 91.144 restrictions issued by NOTAM.",
+    "expected_sections": [
+      "91.144",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q155",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Hard",
+    "question_type": "Lookup",
+    "question": "Is there a special TFR rule for disasters in Hawaii?",
+    "expected_answer": "Yes. When the Governor of Hawaii asks and the FAA finds an inhabited area in a declared national disaster area needs protection for humanitarian reasons, it issues a NOTAM TFR under 91.138, effective up to 90 days or until the disaster designation ends. Part 107 operators must comply.",
+    "expected_sections": [
+      "91.138",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q156",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Hard",
+    "question_type": "Lookup",
+    "question": "What are 'emergency air traffic rules' and do drone pilots have to follow them?",
+    "expected_answer": "When the FAA determines an emergency condition exists, or will exist, related to its ability to operate the air traffic control system, it can issue emergency air traffic rules by NOTAM. Part 107 operators must comply.",
+    "expected_sections": [
+      "91.139",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q157",
+    "topic": "TFRs and special restrictions",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Can I fly my drone around the outside of an NFL stadium during a game if I stay outside the parking lot?",
+    "expected_answer": "Part 107 requires compliance with NOTAMs under 91.137-91.145 and 99.7. Regular-season NFL games aren't on the 91.145 event list; stadium restrictions are issued as special security instructions under 99.7, so check the NOTAM and don't assume the parking lot is the edge. (A 91.145 major sporting event TFR is normally 3 NM radius and 2,500 ft above the surface.)",
+    "expected_sections": [
+      "91.145",
+      "107.47"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q158",
+    "topic": "Waivers",
+    "difficulty": "Hard",
+    "question_type": "Multi-step",
+    "question": "We want to fly two drones at once BVLOS at night over people. Which waivers do I need?",
+    "expected_answer": "Waivers for 107.35 (multiple aircraft), 107.31 (VLOS) and 107.39 (over people), and the 107.29 night lighting provisions if you lack anti-collision lights. The night knowledge requirement can't be waived, and BVLOS carrying property for hire can't be waived.",
+    "expected_sections": [
+      "107.200",
       "107.205"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q34",
+    "id": "Q159",
+    "topic": "Accident reporting",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "My drone fell on a guy's shoulder; he was fine but he passed out for a few seconds. Nothing else damaged. Report?",
+    "expected_answer": "Yes. Any loss of consciousness is reportable within 10 calendar days, regardless of injury severity or property damage.",
+    "expected_sections": [
+      "107.9"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q160",
+    "topic": "Accident reporting",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Crashed into a fence and it'll cost $700 to fix, but my client says they'll just eat the cost. Do I still report?",
+    "expected_answer": "Yes. Damage to property other than the drone over $500 (repair cost including materials and labor, or fair market value if a total loss) must be reported within 10 calendar days. Who pays doesn't matter.",
+    "expected_sections": [
+      "107.9"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q161",
+    "topic": "Operations over people",
+    "difficulty": "Hard",
+    "question_type": "Multi-step",
+    "question": "Explain how Category 2 and Category 3 differ in where you're allowed to fly over people.",
+    "expected_answer": "Category 2 may fly over people generally and may do sustained flight over open-air assemblies if Remote ID compliant. Category 3 may not fly over open-air assemblies at all, and may fly over people only within a closed- or restricted-access site where everyone is on notice, or without sustained flight over people not directly participating or not protected.",
+    "expected_sections": [
+      "107.115",
+      "107.125"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q162",
     "topic": "Operations over people",
     "difficulty": "Hard",
     "question_type": "Scenario",
-    "question": "My Category 2 drone's label fell off. Can I still fly it over people?",
-    "expected_answer": "Not until you relabel it. If the label is damaged, destroyed or missing, the RPIC must relabel it in English per 107.120(b) before operating over people.",
+    "question": "Using my Cat 2 drone to film a parade. The people on the floats are in moving vehicles. Ok to fly along over them?",
+    "expected_answer": "Over people on foot, Cat 2 sustained flight over the parade crowd requires Remote ID compliance (open-air assembly). Over people inside moving vehicles, you need either a closed- or restricted-access site with everyone inside the vehicles on notice, or no sustained flight over the moving vehicles.",
     "expected_sections": [
-      "107.135"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q35",
-    "topic": "Moving vehicles",
-    "difficulty": "Medium",
-    "question_type": "Scenario",
-    "question": "Can I fly my drone from a moving car while filming a rural road race?",
-    "expected_answer": "Only if flown over a sparsely populated area and not transporting another person's property for compensation or hire. Flying from a moving aircraft is never allowed without a waiver.",
-    "expected_sections": [
-      "107.25"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q36",
-    "topic": "Moving vehicles",
-    "difficulty": "Hard",
-    "question_type": "Multi-step",
-    "question": "Can I fly a Category 1, 2 or 3 drone over people in moving cars?",
-    "expected_answer": "Only if, throughout the operation, the drone stays within or over a closed or restricted-access site with everyone in the vehicles on notice, or it does not maintain sustained flight over moving vehicles.",
-    "expected_sections": [
+      "107.115",
       "107.145"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q37",
-    "topic": "Night operations",
-    "difficulty": "Medium",
-    "question_type": "Multi-step",
-    "question": "What do I need to fly at night under Part 107?",
-    "expected_answer": "The RPIC must have passed an initial knowledge test or completed training under 107.65 after April 6, 2021, and the drone needs anti-collision lighting visible for at least 3 statute miles with a flash rate sufficient to avoid a collision.",
-    "expected_sections": [
-      "107.29"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q38",
-    "topic": "Night operations",
-    "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "What is civil twilight and what does it require?",
-    "expected_answer": "Outside Alaska, the 30 minutes before official sunrise and the 30 minutes after official sunset. Flights in civil twilight need anti-collision lighting visible for at least 3 statute miles.",
-    "expected_sections": [
-      "107.29"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q39",
-    "topic": "Remote ID",
-    "difficulty": "Medium",
-    "question_type": "Multi-step",
-    "question": "What are my options for complying with Remote ID?",
-    "expected_answer": "Fly a standard Remote ID drone (89.110), add a Remote ID broadcast module (89.115(a), and the drone must stay within visual line of sight), or fly without Remote ID only inside an FAA-recognized identification area (FRIA) (89.115(b)).",
-    "expected_sections": [
-      "89.105",
-      "89.110",
-      "89.115"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q40",
-    "topic": "Remote ID",
-    "difficulty": "Medium",
-    "question_type": "Scenario",
-    "question": "My Remote ID stops broadcasting mid-flight. What do I do?",
-    "expected_answer": "Land as soon as practicable.",
-    "expected_sections": [
-      "89.110",
-      "89.115"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q41",
-    "topic": "Registration",
+    "id": "Q163",
+    "topic": "Applicability",
     "difficulty": "Hard",
-    "question_type": "Scenario",
-    "question": "My drone weighs 0.5 pounds and I use it for paid real estate photos. Does it need to be registered?",
-    "expected_answer": "Yes. The under-0.55-pound exemption applies only to drones flown exclusively for recreation under 49 U.S.C. 44809. Any Part 107 operation must be registered.",
+    "question_type": "Multi-step",
+    "question": "I'm a recreational flyer but a realtor friend asked me to snap a few shots for a listing, unpaid. Does Part 107 apply?",
+    "expected_answer": "Likely yes. Part 107 excludes only aircraft operated under the 49 U.S.C. 44809 recreational exception; flying to support a business is not recreational even when unpaid. That means a remote pilot certificate, registration under Part 107 and Remote ID compliance.",
     "expected_sections": [
       "48.15",
-      "107.13"
+      "107.1",
+      "107.12"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q42",
-    "topic": "Accident reporting",
-    "difficulty": "Easy",
-    "question_type": "Multi-step",
-    "question": "When do I have to report a drone accident to the FAA, and how fast?",
-    "expected_answer": "Within 10 calendar days, if the flight caused serious injury or loss of consciousness to anyone, or damage to property other than the drone itself costing more than $500 to repair (or fair market value over $500 if a total loss).",
-    "expected_sections": [
-      "107.9"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q43",
-    "topic": "Accident reporting",
-    "difficulty": "Medium",
+    "id": "Q164",
+    "topic": "Airspace and LAANC",
+    "difficulty": "Hard",
     "question_type": "Scenario",
-    "question": "My drone hit a parked car. The body shop quotes $450, and the drone itself is destroyed ($1,800). Do I have to report it?",
-    "expected_answer": "No. Damage to the drone does not count, and the property damage is $500 or less.",
+    "question": "My LAANC approval in Class C is for 200 feet, but the tower I'm inspecting is 350 feet tall. Can I use the 400-feet-above-a-structure rule?",
+    "expected_answer": "No. The structure exception in 107.51 doesn't override your ATC authorization. In controlled airspace you must stay within the altitude ATC authorized; request a higher authorization if needed.",
     "expected_sections": [
-      "107.9"
+      "107.41",
+      "107.51"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q44",
-    "topic": "Preflight and weather",
-    "difficulty": "Medium",
+    "id": "Q165",
+    "topic": "Hazardous operations",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Client wants me to drop fliers over a crowd at a car show. Legal?",
+    "expected_answer": "No. Dropping objects that create an undue hazard to persons is prohibited, and flying over a crowd requires meeting a Category 1-4 standard (with Remote ID for sustained flight over an open-air assembly in Category 1, 2 or 4; never in Category 3).",
+    "expected_sections": [
+      "107.23",
+      "107.39",
+      "107.110",
+      "107.115",
+      "107.125",
+      "107.140"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q166",
+    "topic": "Emergencies",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "Low battery warning and the RTH is going to fly it over a crowd. Can I force-land in a no-go area like a highway shoulder?",
+    "expected_answer": "In an in-flight emergency you may deviate from Part 107 to the extent necessary to meet the emergency, and must file a written report if the FAA asks. You are still responsible for avoiding hazards to people and property.",
+    "expected_sections": [
+      "107.19",
+      "107.21"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q167",
+    "topic": "Crew roles",
+    "difficulty": "Hard",
     "question_type": "Multi-step",
-    "question": "What does Part 107 require me to do before every flight?",
-    "expected_answer": "Assess the operating environment (local weather, airspace and flight restrictions, people and property on the surface, ground hazards); brief all direct participants; check that control links work; confirm enough power for the intended operating time; confirm attached objects are secure; and for operations over people, confirm the aircraft meets the applicable category requirement. Also check the drone is in condition for safe operation.",
+    "question": "What are all the things the RPIC is responsible for under 107.19?",
+    "expected_answer": "Be designated before or during flight; be directly responsible for and the final authority on the operation; ensure it poses no undue hazard to other people, aircraft or property in case of loss of control; ensure it complies with all applicable regulations; and have the ability to direct the aircraft to ensure compliance.",
     "expected_sections": [
-      "107.15",
-      "107.49"
+      "107.19"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q45",
+    "id": "Q168",
+    "topic": "Certification and training",
+    "difficulty": "Hard",
+    "question_type": "Scenario",
+    "question": "I passed my initial test in March 2024. Is my 107 still current in March 2026?",
+    "expected_answer": "Yes, through March 31, 2026. Aeronautical knowledge recency is within the previous 24 calendar months, counted to the end of the month.",
+    "expected_sections": [
+      "107.65"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q169",
     "topic": "Drugs and alcohol",
-    "difficulty": "Easy",
-    "question_type": "Lookup",
-    "question": "What are the alcohol rules for drone pilots?",
-    "expected_answer": "No acting as RPIC, manipulator or VO within 8 hours of drinking, while under the influence, while using a drug that affects faculties contrary to safety, or with a 0.04 or greater alcohol concentration.",
+    "difficulty": "Hard",
+    "question_type": "Multi-step",
+    "question": "Walk me through every way alcohol or drugs can cost me my remote pilot certificate.",
+    "expected_answer": "1) A federal or state drug conviction (107.57(a)); 2) committing an act prohibited by 91.17(a) or 91.19(a), such as flying within 8 hours of drinking, under the influence, impaired by drugs or at 0.04+ BAC (107.57(b)); 3) refusing an alcohol test or to furnish results when requested (107.59). Each can mean denial for up to 1 year or suspension/revocation.",
     "expected_sections": [
       "91.17",
-      "107.27"
-    ],
-    "should_refuse": false
-  },
-  {
-    "id": "Q46",
-    "topic": "Drugs and alcohol",
-    "difficulty": "Medium",
-    "question_type": "Lookup",
-    "question": "What happens if I refuse an alcohol test requested by law enforcement?",
-    "expected_answer": "Refusal can be grounds for denying an application for a remote pilot certificate for up to 1 year after the refusal, or suspension or revocation of the certificate.",
-    "expected_sections": [
+      "107.27",
+      "107.57",
       "107.59"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q47",
+    "id": "Q170",
+    "topic": "Operations over people",
+    "difficulty": "Hard",
+    "question_type": "Lookup",
+    "question": "Do Category 2 and 3 drones need a label, and what does it have to say?",
+    "expected_answer": "Yes. To be eligible for Category 2 or 3 the drone must display a label, in English, legible, prominent and permanently affixed, identifying its eligible category. If the label is damaged, destroyed or missing, the RPIC must relabel it before flying over people.",
+    "expected_sections": [
+      "107.115",
+      "107.120",
+      "107.125",
+      "107.135"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q171",
     "topic": "Out of scope",
-    "difficulty": "Medium",
+    "difficulty": "Easy",
     "question_type": "Out of scope",
-    "question": "Can I fly over my neighbor's backyard and film them?",
-    "expected_answer": "Part 107 doesn't address privacy. It only governs safety rules such as flying over people. Privacy and trespass are state and local law.",
+    "question": "Do I need an FCC license to run a 5.8 GHz video transmitter on my FPV quad?",
+    "expected_answer": "Radio licensing is FCC territory, not Part 107 or Part 89. The corpus doesn't cover it.",
     "expected_sections": [],
     "should_refuse": true
   },
   {
-    "id": "Q48",
+    "id": "Q172",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "whats the best drone for real estate photos under $1500?",
+    "expected_answer": "Product recommendations are outside the corpus. Part 107 doesn't recommend aircraft.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q173",
     "topic": "Out of scope",
     "difficulty": "Medium",
     "question_type": "Out of scope",
-    "question": "What rules apply to me if I only fly for fun?",
-    "expected_answer": "Part 107 does not apply to aircraft operated under 49 U.S.C. 44809 (the recreational exception). Recreational flyers follow 44809, including passing the recreational safety test (TRUST).",
+    "question": "Can I fly my drone in Yellowstone?",
+    "expected_answer": "Launching and landing in national parks is governed by National Park Service rules, not Part 107. The corpus doesn't cover it.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q174",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "How much should I charge per hour for drone mapping?",
+    "expected_answer": "Pricing is outside the regulations in the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q175",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "do i need a business license in texas to do drone photography",
+    "expected_answer": "State business licensing is outside Part 107 and the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q176",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Is it legal to shoot down a drone hovering over my property?",
+    "expected_answer": "Not covered by Part 107 or the corpus (federal criminal law and state law apply). The agent should not give a legal answer from Part 107.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q177",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "What are the drone rules in Canada? Flying in Banff next month.",
+    "expected_answer": "Canadian drone rules (Transport Canada) are outside the corpus, which covers only U.S. FAA rules.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q178",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "How do I get my private pilot license?",
+    "expected_answer": "Manned pilot certification under Part 61 is outside the corpus (only 61.56 flight reviews are included).",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q179",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "What are the VFR fuel requirements for a Cessna 172?",
+    "expected_answer": "Manned aircraft fuel requirements (14 CFR 91.151) are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q180",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "Can my HOA ban me from flying over the neighborhood?",
+    "expected_answer": "HOA rules and property law are outside Part 107 and the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q181",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "Can I write off my drone on my taxes?",
+    "expected_answer": "Tax treatment is outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q182",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "How do I set up return to home on my DJI Mini 4?",
+    "expected_answer": "Manufacturer-specific setup is outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q183",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "Do I need a Part 137 certificate to spray crops with my drone?",
+    "expected_answer": "Agricultural aircraft operations under Part 137 are outside the corpus. Part 107 only says a small UA may not carry hazardous material, which may apply to some chemicals.",
+    "expected_sections": [
+      "107.36"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q184",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "How do I get Part 135 air carrier certification for drone delivery?",
+    "expected_answer": "Part 135 certification is outside the corpus. Part 107 does not apply to air carrier operations.",
     "expected_sections": [
       "107.1"
     ],
     "should_refuse": false
   },
   {
-    "id": "Q49",
+    "id": "Q185",
     "topic": "Out of scope",
-    "difficulty": "Medium",
+    "difficulty": "Hard",
     "question_type": "Out of scope",
-    "question": "Do I need liability insurance to fly commercially under Part 107?",
-    "expected_answer": "Part 107 has no insurance requirement. Clients, states or local governments may require it.",
+    "question": "Is it legal to mount a gun or flamethrower on my drone?",
+    "expected_answer": "The federal weapons-on-drones prohibition is in statute (49 U.S.C. 44802 note), outside the corpus. Part 107's careless/reckless and dropping-objects rules don't settle it.",
     "expected_sections": [],
     "should_refuse": true
   },
   {
-    "id": "Q50",
+    "id": "Q186",
     "topic": "Out of scope",
     "difficulty": "Hard",
     "question_type": "Out of scope",
-    "question": "What are the rules for routine BVLOS package delivery under Part 108?",
-    "expected_answer": "Part 107 doesn't cover this. Under Part 107, BVLOS needs a waiver of 107.31, and carrying others' property for hire BVLOS cannot be waived. Air carrier operations are excluded from Part 107. Any Part 108 rules are outside this corpus.",
-    "expected_sections": [
-      "107.1",
-      "107.205"
-    ],
+    "question": "What are the cloud clearance minimums for a helicopter in Class G?",
+    "expected_answer": "Manned VFR weather minimums (14 CFR 91.155) are outside the corpus. Only the Part 107 drone cloud clearance is in scope.",
+    "expected_sections": [],
     "should_refuse": true
+  },
+  {
+    "id": "Q187",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Do I need an export license to ship my drone to a customer in Mexico?",
+    "expected_answer": "Export controls are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q188",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "What are the EU drone class labels C0 through C4?",
+    "expected_answer": "EU (EASA) rules are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q189",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Can police use my drone footage as evidence without a warrant?",
+    "expected_answer": "Criminal procedure and evidence law are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q190",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "My drone caught a car crash on video. Can I sell it to a news station?",
+    "expected_answer": "Copyright and media rights are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q191",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "How do I get my drone out of a tree on my neighbor's property?",
+    "expected_answer": "Property access and recovery aren't covered by Part 107 or the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q192",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "How do I become an FAA designated pilot examiner?",
+    "expected_answer": "Examiner designation is outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q193",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "What's the minimum altitude for a plane flying over a city?",
+    "expected_answer": "Manned aircraft minimum safe altitudes (14 CFR 91.119) are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q194",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "What does an FAA third class medical exam involve?",
+    "expected_answer": "Medical certification standards (Part 67) are outside the corpus. Part 107 requires no medical certificate.",
+    "expected_sections": [
+      "107.17"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q195",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "What's the fine if I fly commercially without a 107 certificate?",
+    "expected_answer": "Civil penalty amounts are set outside the corpus (statute and FAA enforcement rules). Part 107 only says a certificate is required.",
+    "expected_sections": [
+      "107.12"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q196",
+    "topic": "Out of scope",
+    "difficulty": "Hard",
+    "question_type": "Out of scope",
+    "question": "My ag drone weighs 60 lb. Walk me through getting a 44807 exemption.",
+    "expected_answer": "The 44807 exemption process is outside the corpus. Part 107 only applies to aircraft under 55 pounds.",
+    "expected_sections": [
+      "107.3"
+    ],
+    "should_refuse": false
+  },
+  {
+    "id": "Q197",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Does the AMA safety code let me fly at my club field above 400 feet?",
+    "expected_answer": "Community-based organization safety guidelines are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q198",
+    "topic": "Out of scope",
+    "difficulty": "Easy",
+    "question_type": "Out of scope",
+    "question": "What's the max range of the DJI Mavic 3 controller?",
+    "expected_answer": "Product specifications are outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q199",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Can I use my drone to hunt deer or scout for them during season?",
+    "expected_answer": "Hunting with drones is governed by state wildlife law, outside the corpus.",
+    "expected_sections": [],
+    "should_refuse": true
+  },
+  {
+    "id": "Q200",
+    "topic": "Out of scope",
+    "difficulty": "Medium",
+    "question_type": "Out of scope",
+    "question": "Do I need permission from the state DOT to fly over an interstate highway?",
+    "expected_answer": "State transportation rules are outside the corpus. Part 107 rules on flying over people and moving vehicles still apply.",
+    "expected_sections": [
+      "107.145"
+    ],
+    "should_refuse": false
   }
 ]

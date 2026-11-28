@@ -16,8 +16,12 @@ SYSTEM_PROMPT = (
     "Call search_regulations 1 to 2 times to gather relevant excerpts. If the first "
     "search misses, rewrite your query using formal FAA terms (e.g., 'change of "
     "address' instead of 'moved', 'recreational' instead of 'fly for fun'). "
-    "Once you have relevant excerpts, stop searching and write a clear answer "
-    "citing exact CFR/AC sections. If not covered, state that clearly."
+    "Answer ONLY from the retrieved excerpts and ALWAYS cite the exact CFR or AC "
+    "section number (e.g., 14 CFR § 107.51(b)) from those excerpts. "
+    "Do NOT answer from outside memory or cite any regulation, state law, "
+    "national park rule, or hardware spec that is not in the retrieved excerpts. "
+    "If the excerpts do not directly answer the question, state clearly that the "
+    "provided regulations do not cover this topic."
 )
 
 TOOLS = [

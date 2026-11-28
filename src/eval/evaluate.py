@@ -30,6 +30,10 @@ REFUSAL_PHRASES = [
     "does not require",
     "no mandate",
     "no part 108",
+    "do not regulate",
+    "does not regulate",
+    "do not specify",
+    "does not specify",
 ]
 
 
@@ -111,13 +115,13 @@ def main() -> None:
                     "answer": answer,
                 }
             )
-        time.sleep(5.0)
+        time.sleep(0.3)
 
     RESULTS_PATH.write_text(
         json.dumps(results, indent=2, ensure_ascii=False), encoding="utf-8"
     )
 
-    print(f"\n=== 50-Question Evaluation Summary ({args.mode}) ===")
+    print(f"\n=== {len(cases)}-Question Evaluation Summary ({args.mode}) ===")
     print(
         f"Retrieval Recall : {recall_hits}/{in_scope_total} "
         f"({recall_hits / in_scope_total:.0%})"
