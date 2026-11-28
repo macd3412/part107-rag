@@ -13,11 +13,11 @@ load_dotenv()
 
 SYSTEM_PROMPT = (
     "You are an FAA Part 107 & Remote ID (Part 89) assistant. "
-    "Always call search_regulations before answering. If the first search misses, "
-    "rewrite your query using formal FAA terms (e.g., 'change of address' instead "
-    "of 'moved', 'recreational' instead of 'fly for fun') and search again. "
-    "Answer ONLY from retrieved excerpts and cite exact CFR/AC sections. "
-    "If the regulations do not cover the question, state that clearly."
+    "Call search_regulations 1 to 2 times to gather relevant excerpts. If the first "
+    "search misses, rewrite your query using formal FAA terms (e.g., 'change of "
+    "address' instead of 'moved', 'recreational' instead of 'fly for fun'). "
+    "Once you have relevant excerpts, stop searching and write a clear answer "
+    "citing exact CFR/AC sections. If not covered, state that clearly."
 )
 
 TOOLS = [
@@ -52,13 +52,15 @@ class AgenticPart107RAG:
         self.retriever = HybridRetriever()
         self.api_key = os.environ["GEMINI_API_KEY"]
 
-    def _call_gemini(self, contents: list[dict]) -> dict:
-        payload = {
+    def _call_gemini(self, contents: list[dict], use_tools: bool = True) -> dict:
+        payload: dict = {
             "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
             "contents": contents,
-            "tools": TOOLS,
             "generationConfig": {"temperature": 0.2},
         }
+        if use_tools:
+            payload["tools"] = TOOLS
+
         for model in config.GENERATION_MODELS:
             url = f"{config.GEMINI_API_BASE}/models/{model}:generateContent"
             for _ in range(2):
@@ -82,15 +84,15 @@ class AgenticPart107RAG:
         raise RuntimeError("All Gemini models are temporarily unavailable.")
 
     def ask(
-        self, question: str, max_steps: int = 4, verbose: bool = True
+        self, question: str, max_steps: int = 3, verbose: bool = True
     ) -> tuple[str, list[dict]]:
-        """Run a tool-calling loop until the agent produces a final answer."""
+        """Run a tool-calling loop and guarantee a synthesized final answer."""
         contents: list[dict] = [{"role": "user", "parts": [{"text": question}]}]
         seen_ids: set[str] = set()
         collected: list[dict] = []
 
         for step in range(max_steps):
-            data = self._call_gemini(contents)
+            data = self._call_gemini(contents, use_tools=True)
             candidate = data["candidates"][0]["content"]
             parts = candidate.get("parts", [])
             calls = [p["functionCall"] for p in parts if "functionCall" in p]
@@ -122,4 +124,14 @@ class AgenticPart107RAG:
                 })
             contents.append({"role": "user", "parts": response_parts})
 
-        return "Reached max search steps without a final answer.", collected
+        # Fallback: force final answer from collected excerpts without tools
+        context = "\n\n---\n\n".join(
+            f"Source: {c['citation']} ({c['url']})\n{c['text']}" for c in collected
+        )
+        final = self._call_gemini(
+            [{"role": "user", "parts": [{"text": f"Regulations:\n{context}\n\nQuestion: {question}"}]}],
+            use_tools=False,
+        )
+        final_parts = final["candidates"][0]["content"].get("parts", [])
+        text = "\n".join(p["text"] for p in final_parts if "text" in p)
+        return text, collected
