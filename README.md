@@ -25,12 +25,17 @@ As a drone pilot navigating FAA rules in the field, compliance questions rarely 
 | **2. Source-Balanced (4 CFR + 1 AC)** | 85% (40/47) | 87% (41/47) | 100% (3/3) |
 | **3. Agentic Multi-Step RAG** | **98% (46/47)** | **96% (45/47)** | **100% (3/3)** |
 
-**150-Question Unseen Expansion Benchmark (Agentic RAG):**  
-The 150-question expansion set comprises 120 in-scope questions + 6 boundary out-of-scope questions that map to a Part 107 exclusion/rule (`Q183`, `Q184`, `Q194`, `Q195`, `Q196`, `Q200`, scored on citing that section = **126** section-graded items) and **24** pure out-of-scope refusal checks:
-- **Retrieval Recall:** `115/126 (91%)` · **Citation Accuracy:** `111/126 (88%)`
-- **Refusal Guardrails:** `21/24 (88%)` *(up from 33% after tightening prompt against pretraining leaks)*
-- **Measured Avg Lookup Time:** `2.35s` · **By Difficulty:** Easy `88%`, Medium `90%`, Hard `86%`
-- **Analyzing the 3 Refusal Misses (`Q171`, `Q180`, `Q185`):** `Q180` (HOA bans) actually refused using *"do not specifically address"* (missed our string-match list), `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Next fix: use an LLM-as-judge refusal grader and add a partial-coverage instruction for questions that touch Part 107 but depend on external statutes.
+**150-Question Unseen Expansion Benchmark (Before vs. After Guardrail Fix):**  
+Comprises 120 in-scope questions + 6 boundary out-of-scope questions that map to a Part 107 exclusion/rule (`Q183`, `Q184`, `Q194`, `Q195`, `Q196`, `Q200` = **126** section-graded items) and **24** pure out-of-scope refusal checks:
+
+| 150-Question Run | Retrieval Recall | Citation Accuracy | Refusal Guardrails | Avg Time |
+| :--- | :--- | :--- | :--- | :--- |
+| **Before (Initial Agentic Prompt)** | 94% (118/126) | 94% (118/126) | 33% (8/24) | 2.90s |
+| **After (Strict Grounding Prompt)** | 91% (115/126) | 88% (111/126) | **88% (21/24)** | **2.35s** |
+
+- **Effective Refusal Rate (`22/24`, 92%):** `Q180` (HOA bans) actually refused cleanly via *"do not specifically address"* and only missed the original string-match list (now fixed in `evaluate.py`), making true refusal performance **22/24 (92%)**.
+- **By Difficulty (After Fix):** Easy `88%` (35/40) · Medium `90%` (46/51) · Hard `86%` (30/35)
+- **Remaining 2 Misses (`Q171`, `Q185`):** `Q171` (5.8 GHz FCC) surfaced a brief frequency note inside `AC 107-2A`, and `Q185` (gun/flamethrower) cited `§ 107.36` hazmat without noting that federal weaponization statutes sit outside Part 107. Next fix: use an LLM-as-judge refusal grader and add a partial-coverage rule for questions touching Part 107 that depend on external statutes.
 - **Automated Checks:** `pytest` unit tests + `ruff check .` clean via GitHub Actions CI.
 
 ## Quickstart & Running Tests

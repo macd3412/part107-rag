@@ -19,6 +19,8 @@ REFUSAL_PHRASES = [
     "does not cover",
     "does not address",
     "do not address",
+    "do not specifically address",
+    "does not specifically address",
     "cannot answer",
     "does not mention",
     "not enough information",
