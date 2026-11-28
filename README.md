@@ -1,6 +1,6 @@
 # Part 107 Field Ops
 
-**[Live Demo](https://part107-rag-crroj772gwmg67r7zyjfsh.streamlit.app)** | **[GitHub CI](https://github.com/macd3412/part107-rag/actions)**
+**[Live Demo](https://part107-drone-faq.streamlit.app)** | **[GitHub CI](https://github.com/macd3412/part107-rag/actions)**
 
 A zero-framework **Agentic RAG + Live Preflight Copilot** for U.S. FAA small unmanned aircraft operations—built with pure Python (`numpy`, `rank-bm25`, `requests`, and `pypdf`). Combines **14 CFR Part 107 / Part 89 / AC 107-2A** retrieval with **live GPS TFR boundary checks** (`tfr.faa.gov`) and **live METAR aviation weather** (`aviationweather.gov`).
 
