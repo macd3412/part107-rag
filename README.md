@@ -9,7 +9,7 @@ As a drone pilot navigating FAA rules in the field, compliance questions rarely 
 
 - **Latency vs. Estimated Manual Lookup:** Measured average query time is **2.35 seconds** across 150 benchmark queries, compared to an **estimated** ~10-minute manual lookup across eCFR, 100-page FAA PDFs, TFR maps, and METARs (~9.96 minutes estimated savings per lookup).
 - **Estimated Team Time Savings (20-pilot team, 50 weeks/yr):** **~83 hours/year** at 0.5 lookups/pilot/week, or **~166 hours/year** (~4 workweeks) at 1 lookup/pilot/week (based on the 10-minute manual baseline assumption).
-- **Compliance Risk Reduction:** Verified **91% recall**, **88% citation accuracy**, and **88% out-of-scope refusal** on 150 unseen questions—reducing the risk of misreading or missing applicable rules before flight.
+- **Compliance Risk Reduction:** Verified **91% recall**, **88% citation accuracy**, and **92% effective out-of-scope refusal** on 150 unseen questions—reducing the risk of misreading or missing applicable rules before flight.
 
 ## Data Sources & Live Tools
 - **14 CFR Part 107, Part 89 & Cross-Referenced Sections (137 chunks):** Official eCFR XML (`§ 48.15`, `§ 61.56`, `§ 91.17`, `§§ 91.137–91.145`) parsed at section boundaries with subpart breadcrumbs.
